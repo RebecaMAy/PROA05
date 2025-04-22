@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Estilos CSS</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<div class="contenedor">
+    <div class="fondoPanel">
+
+        <!-- Paleta de colores -->
+        <div class="paleta-colores">
+            <div class="color-box" style="--color: var(--color-primario);">Primario</div>
+            <div class="color-box" style="--color: var(--color-secundario);">Secundario</div>
+            <div class="color-box" style="--color: var(--color-terciario);">Terciario</div>
+            <div class="color-box" style="--color: var(--color-inputError);">Input Error</div>
+            <div class="color-box" style="--color: var(--color-mensajeError);">Mensaje Error</div>
+            <div class="color-box" style="--color: var(--color-exito);">Éxito</div>
+            <div class="color-box" style="--color: var(--color-bordes);">Bordes</div>
+            <div class="color-box" style="--color: var(--color-fondoPROAGris);">Fondo Gris</div>
+            <div class="color-box" style="--color: var(--color-panelesBlancoPuro);">Fondo Blanco</div>
+        </div>
+
+
+        <h1>H1 - Este HTML visual será eliminado en la primera versión final</h1>
+        <h2>H2 - Iconos Disponibles</h2>
+        <div class="galeria-iconos">
+            <div class="icono-item"><img src="../icons/administracionPÀS.svg" alt="administracionPAS"><span>administracionPAS</span></div>
+            <div class="icono-item"><img src="../icons/advertencia.svg" alt="advertencia"><span>advertencia</span></div>
+            <div class="icono-item"><img src="../icons/advertenciaFecha.svg" alt="advertenciaFecha"><span>advertenciaFecha</span></div>
+            <div class="icono-item"><img src="../icons/anyadir.svg" alt="anyadir"><span>anyadir</span></div>
+            <div class="icono-item"><img src="../icons/Avisos.svg" alt="Avisos"><span>Avisos en blanco</span></div>
+            <div class="icono-item"><img src="../icons/examenes.svg" alt="examenes"><span>examenes</span></div>
+            <div class="icono-item"><img src="../icons/fecha.svg" alt="fecha"><span>fecha</span></div>
+            <div class="icono-item"><img src="../icons/flechaScroll.svg" alt="flechaScroll"><span>flechaScroll</span></div>
+            <div class="icono-item"><img src="../icons/foro.svg" alt="foro"><span>foro</span></div>
+            <div class="icono-item"><img src="../icons/guiaDocente.svg" alt="guiaDocente"><span>guiaDocente</span></div>
+            <div class="icono-item"><img src="../icons/horario.svg" alt="horario"><span>horario</span></div>
+            <div class="icono-item"><img src="../icons/iconoExamen.svg" alt="iconoExamen"><span>iconoExamen</span></div>
+            <div class="icono-item"><img src="../icons/menu.svg" alt="menu"><span>menu</span></div>
+            <div class="icono-item"><img src="../icons/menuPAS.svg" alt="menuPAS"><span>menuPAS</span></div>
+            <div class="icono-item"><img src="../icons/Perfil.svg" alt="Perfil"><span>Perfil en blanco</span></div>
+            <div class="icono-item"><img src="../icons/pesoExamen.svg" alt="pesoExamen"><span>pesoExamen</span></div>
+            <div class="icono-item"><img src="../icons/recursos.svg" alt="recursos"><span>recursos</span></div>
+            <div class="icono-item"><img src="../icons/logoAzul.svg" alt="logoAzul"><span>logo PROA azul</span></div>
+            <div class="icono-item"><img src="../icons/logoBlanco.svg" alt="logoBlanco"><span>logo PROA blanco</span></div>
+        </div>
+
+        <h3>H3 - Mejor una carpeta de iconos para todo PROA, los iconos se repiten en todos los roles</h3>
+        <h4>H4 - En los botones ¿hay un problema? Cuando una está pulsado es igual que el que tiene al lado (por ejemplo, exámenes)</h4>
+        <h5>H5 - Solución: quedarse con uno de los dos</h5>
+
+        <button class="btn">Haz clic aquí</button>
+        <button class="btn-secundario">Haz clic aquí</button>
+
+        <!-- Input de búsqueda con ícono a la izquierda -->
+        <div class="input-con-icono">
+            <img src="../pas/icons/search.svg" alt="Buscar" class="icono-buscador">
+            <input type="text" class="input-base input-textoBusqueda" placeholder="Buscar asignaturas...">
+        </div>
+
+        <!-- Dropdown con ícono a la derecha -->
+        <div class="input-con-icono">
+            <select class="input-base seleccionador-dropdown">
+                <option selected disabled hidden>Todos los departamentos</option>
+                <option>Matemática Aplicada</option>
+                <option>Informática</option>
+                <option>Electrónica</option>
+            </select>
+            <img src="../pas/icons/dropdown.svg" alt="Flecha" class="icono-dropdown">
+        </div>
+
+        <!-- Dropdown Asignaturas -->
+        <div class="input-con-icono">
+            <select id="dropdown-asignaturas" class="input-base seleccionador-dropdown">
+                <option selected disabled hidden>Tus Asignaturas</option>
+                <option>Programación 1</option>
+                <option>Algorítmica</option>
+                <option>Control</option>
+            </select>
+            <img src="../icons/dropdownAsignaturas.svg" alt="Flecha" class="icono-dropdown">
+        </div>
+
+        <!-- Input normal sin íconos -->
+        <input type="text" class="input-base" placeholder="Ej: MAT101">
+
+        <div class="boton-opcion">
+            <span class="letra">A.</span>
+            <span class="texto">Una matriz 3x3</span>
+        </div>
+
+
+        <!-- Panel de Preguntas -->
+            <div class="pregunta-contenedor">
+                <div class="respuestas-contenedor">
+                    <div class="respuesta-opcion">
+                        <div class="radio-grupo">
+                            <input type="radio" id="opcion-a" name="pregunta1">
+                            <label for="opcion-a">A.</label>
+                        </div>
+                        <input type="text" class="input-base input-respuesta" placeholder="Escribe la respuesta aquí...">
+                            <img src="../icons/trash.svg" alt="Eliminar" class="icono-eliminar">
+                    </div>
+
+                    <div class="respuesta-opcion">
+                        <div class="radio-grupo">
+                            <input type="radio" id="opcion-b" name="pregunta1">
+                            <label for="opcion-b">B.</label>
+                        </div>
+                        <input type="text" class="input-base input-respuesta" placeholder="Escribe la respuesta aquí...">
+                            <img src="../icons/trash.svg" alt="Eliminar" class="icono-eliminar">
+                    </div>
+
+                    <div class="respuesta-opcion">
+                        <div class="radio-grupo">
+                            <input type="radio" id="opcion-c" name="pregunta1">
+                            <label for="opcion-c">C.</label>
+                        </div>
+                        <input type="text" class="input-base input-respuesta" placeholder="Escribe la respuesta aquí...">
+                            <img src="../icons/trash.svg" alt="Eliminar" class="icono-eliminar">
+                    </div>
+                </div>
+
+                <button class="btn-agregar">
+                    <span class="icono-mas">+</span>
+                    Añadir respuesta
+                </button>
+            </div>
+        </div>
+</div>
+</body>
+</html>
+

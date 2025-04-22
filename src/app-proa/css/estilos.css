@@ -1,0 +1,393 @@
+/* region --- RESET --- */
+* { margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; }
+
+body { min-height: 100dvh; }
+input, button, textarea, select { font: inherit; }
+
+p { text-wrap: pretty; }
+h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+
+img, video, svg { height: auto; max-width: 100%; }
+
+@media (prefers-reduced-motion: reduce)  {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+        transition: none;
+    }
+}
+
+a { color: inherit; }
+/* endregion */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400');
+
+:root {
+    /* Colores */
+    --color-primario: #459CFF;
+    --color-secundario: #51A3FD;
+    --color-terciario: #DCEBFF;
+    --color-inputError: #F0ADAD;
+    --color-mensajeError: #FF4040;
+    --color-exito: #BAE6A2;
+    --color-bordes: #CCCCCC; /*Color diferenciador de fondo de paneles, borde de paneles e inputs.*/
+    --color-fondoPROAGris: #F9FAFB;
+    --color-panelesBlancoPuro: #FFFFFF;
+
+    /* Tipografía */
+    --fuente-principal: 'Lato', sans-serif;
+
+    background-color: var(--color-fondoPROAGris);
+}
+
+/* region --- HEADLINES PC Y MÓVIL --- */
+h1 {
+    font-family: var(--fuente-principal);
+    font-size: 1.875em; /* 30px */
+    font-weight: 700;
+}
+
+h2 {
+    font-family: var(--fuente-principal);
+    font-size: 1.5625em; /* 25px */
+    font-weight: 700;
+}
+
+h3 {
+    font-family: var(--fuente-principal);
+    font-size: 1.25em; /* 20px */
+    font-weight: 700;
+}
+
+h4 {
+    font-family: var(--fuente-principal);
+    font-size: 1.125em; /* 18px */
+    font-weight: 400;
+}
+
+h5 {
+    font-family: var(--fuente-principal);
+    font-size: 1em; /* 16px */
+    font-weight: 400;
+}
+
+/* === Headlines MÓVIL === */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.4375em; /* 23px */
+    }
+
+    h2 {
+        font-size: 1.25em; /* 20px */
+    }
+
+    h3 {
+        font-size: 1.125em; /* 18px */
+    }
+
+    h4 {
+        font-size: 1em; /* 16px */
+    }
+
+    h5 {
+        font-size: 0.875em; /* 14px */
+    }
+}
+/* endregion */
+
+/* region --- BOTÓN --- */
+.btn {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-primario);
+    font-size: 1.125em;
+    font-weight: 400;
+    color: white;
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    color: var(--color-primario);
+    background-color: var(--color-panelesBlancoPuro);
+    border: 2px solid var(--color-primario);
+}
+
+.btn-secundario {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-panelesBlancoPuro);
+    font-size: 1.125em;
+    font-weight: 400;
+    color: var(--color-primario);
+    padding: 0.75em 1.5em;
+    border: 2px solid var(--color-primario);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-secundario:hover {
+    color: white; /* Texto en blanco */
+    background-color: var(--color-primario);
+    border-color: var(--color-primario);
+}
+/* endregion */
+
+/* region --- FONDO PANEL --- */
+.fondoPanel {
+    background-color: var(--color-panelesBlancoPuro);
+    padding: 2em;
+    border: 2px solid var(--color-bordes);
+    border-radius: 5px;
+}
+/* endregion */
+
+/* region --- PROVISIONAL PARA VER TODO EN EL HTML --- */
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.fondoPanel > * {
+    margin-bottom: 1em;
+    margin-right: 1em;
+}
+
+.fondoPanel > *:last-child {
+    margin-bottom: 0;
+}
+
+.paleta-colores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-top: 2em;
+}
+
+.color-box {
+    background-color: var(--color);
+    padding: 1em;
+    color: #000;
+    font-family: var(--fuente-principal);
+    font-weight: 500;
+    font-size: 0.875em;
+    border-radius: 5px;
+    min-width: 8em;
+    text-align: center;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.galeria-iconos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    margin-top: 2em;
+}
+
+.icono-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    text-align: center;
+    font-size: 0.75em;
+    font-family: var(--fuente-principal);
+    color: #444;
+}
+
+.icono-item img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 0.5em;
+    object-fit: contain;
+}
+/* endregion */
+
+/* region --- INPUTS BASE --- */
+.input-base {
+    font-family: var(--fuente-principal);
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--color-bordes);
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 0.75em 1em;
+}
+
+.input-base:focus {
+    border-color: #6b6b6b;
+    outline: none;
+}
+/* endregion */
+
+/* region --- CONTENEDOR CON ICONO --- */
+.input-con-icono {
+    position: relative;
+    display: inline-block;
+}
+/* endregion */
+
+/* region --- ICONO IZQUIERDA (buscador) --- */
+.icono-buscador {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0.75em;
+    width: 1em;
+    height: 1em;
+    color: #7F7F7F;
+    pointer-events: none;
+}
+/* endregion */
+
+/* region --- INPUT DE BUSQUEDA (con icono izquierda) --- */
+.input-textoBusqueda {
+    padding-left: 2.5em; /* deja espacio al ícono */
+    font-weight: 400;
+}
+/* endregion */
+
+/* region --- DROPDOWNS ---*/
+.icono-dropdown {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0.75em;
+    width: 1em;
+    height: 1em;
+    pointer-events: none;
+}
+
+.seleccionador-dropdown {
+    font-weight: 500;
+    color: #000000;
+    padding-right: 2.5em; /* espacio para el ícono */
+    appearance: none;
+    cursor: pointer;
+}
+
+#dropdown-asignaturas {
+    color: var(--color-panelesBlancoPuro);
+    border-color: var(--color-primario);
+    background-color: var(--color-primario);
+}
+/* endregion */
+
+/* region --- PANEL DE PREGUNTAS --- */
+.pregunta-contenedor {
+    background-color: var(--color-fondoPROAGris);
+    padding: 2em;
+    border: 2px solid var(--color-bordes);
+    border-radius: 5px;
+}
+
+.respuestas-contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-bottom: 1.5em;
+}
+
+.respuesta-opcion {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.radio-grupo {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    min-width: 40px;
+}
+
+.radio-grupo label {
+    font-family: var(--fuente-principal);
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.input-respuesta {
+    flex: 1;
+    background-color: var(--color-panelesBlancoPuro);
+}
+
+.icono-eliminar {
+    width: 25px;
+    height: 25px;
+    cursor: pointer; /* Muestra el icono de la mano en el navegador */
+}
+
+.btn-agregar {
+    width: 100%;
+    padding: 0.75em;
+    border: 2px dashed var(--color-bordes);
+    border-radius: 5px;
+    background: var(--color-panelesBlancoPuro);
+    color: var(--color-primario);
+    font-family: var(--fuente-principal);
+    font-weight: 500;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-agregar:hover {
+    background-color: var(--color-terciario);
+}
+
+.icono-mas {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+/* endregion */
+
+/* region --- BOTÓN RESPUESTA --- */
+.boton-opcion {
+    background-color: rgba(204, 204, 204, 0.18); /* CCCCCC al 18% */
+    border-radius: 8px;
+    padding: 0.75em 1em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.boton-opcion:hover {
+    background-color: var(--color-terciario);
+}
+
+.letra {
+    font-family: 'Lato', sans-serif;
+    font-weight: 600; /* Semibold */
+    font-size: 1em;
+}
+
+.texto {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300; /* Light */
+    font-size: 0.875em;
+}
+/* endregion */
+
+
+
+
+
+
+
+
+
