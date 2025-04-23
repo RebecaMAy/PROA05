@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejemplo CSS GTI</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<div class="contenedor">
+<div class="seccion">
+    <h2>Paleta de colores GTI</h2>
+    <div class="paleta-colores">
+        <div class="color-box" style="--color: var(--color-principal);">#A03A6F<br>Principal</div>
+        <div class="color-box light" style="--color: var(--color-sombra-imagen);">#C7B2C4<br>Sombra Imagen</div>
+        <div class="color-box light" style="--color: var(--color-fondo-diferenciador);">#F9F9F9<br>Fondo</div>
+        <div class="color-box light" style="--color: var(--color-blancoPuro); border: 1px solid #000;">#FFFFFF<br>Footer Letra</div>
+        <div class="color-box" style="--color: var(--color-footer-fondo);">#101827<br>Fondo Footer</div>
+        <div class="color-box" style="--color: var(--color-textos);">#000000<br>Textos</div>
+        <div class="color-box light" style="--color: var(--color-panelesBordesGris);">#CCCCCC<br>Paneles</div>
+    </div>
+    <button class="btnCTA">Conoce nuestra solución</button>
+    <button class="btn">Enviar sugerencia</button>
+    <button class="btnCTA-PROA">Probar DEMO</button>
+    <button class="btnPROA">Solicitar información</button>
+    <button class="btnPROA-secundario">Solicitar información</button>
+</div>
+
+<div class="seccion titulares">
+    <h1>Headline 1 - Lora Bold</h1>
+    <h2>Headline 2 - Lora Bold</h2>
+    <h3>Headline 3 - Lato Bold</h3>
+    <h4>Headline 4 - Lato Regular</h4>
+    <h5>Headline 5 - Lato Regular</h5>
+    <h6>Headline 6 - Lato Regular</h6>
+</div>
+
+    <div class="seccion">
+        <p class="parrafo-principal">Este es un párrafo principal: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel dapibus arcu.</p>
+        <p class="parrafo-secundario">Este es un párrafo secundario: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+        <p class="parrafo-terciario">Este es un párrafo terciario: PROA es un campus virtual que fortalece la comunicación entre docentes y alumnos, integrando funcionalidades como exámenes, calificaciones y horarios en un entorno claro y accesible. Diseñado para adaptarse al ritmo académico, facilita una experiencia educativa conectada y sin complicaciones.</p>
+    </div>
+
+    <!-- Ejemplo de formulario -->
+    <form id="login" class="formulario">
+
+        <label for="nombre">Nombres & Apellidos *</label>
+        <input id="nombre" type="text" placeholder="Tu nombre" class="input-contacto">
+
+        <label for="email">Correo insitucional *</label>
+        <input id="email" type="email" class="input-base">
+
+        <label for="password">Contraseña</label>
+        <input id="password" type="password"  class="input-base">
+
+        <label for="productos">Porfavor, selecciona el producto con el que tengas dudas *</label>
+        <div class="input-dropdown">
+            <select id="productos" class="seleccionador-dropdown">
+                <option selected disabled hidden>Selecciona un producto</option>
+                <option>PROA</option>
+            </select>
+            <img src="../icons/dropdown.svg" alt="Flecha" class="icono-dropdown">
+        </div>
+
+        <label for="mensaje">Mensaje *</label>
+        <textarea id="mensaje" placeholder="Escribe tu mensaje..." class="input-contacto" rows="4"></textarea>
+    </form>
+
+    <!-- Iconos GTI -->
+    <div class="galeria-iconos">
+        <div class="icono-item"><img src="../icons/accesoMultiplataforma.svg" alt="accesoMultiplataforma"><span>Icono Pag Prod</span></div>
+        <div class="icono-item"><img src="../icons/demoMultiperfil.svg" alt="demoMultiperfil"><span>Icono Pag Prod</span></div>
+        <div class="icono-item"><img src="../icons/interfazIntuitiva.svg" alt="interfazIntuitiva"><span>Icono Pag Prod</span></div>
+        <div class="icono-item"><img src="../icons/perfilGTI.svg" alt="perfilGTI"><span>perfil</span></div>
+        <div class="icono-item"><img src="../icons/logoGTI.svg" alt="logo"><span>logo GTI</span></div>
+    </div>
+</div>
+</body>
+</html>

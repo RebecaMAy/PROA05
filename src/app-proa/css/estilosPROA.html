@@ -2,8 +2,10 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de Estilos CSS</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejemplo CSS PROA</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
@@ -23,15 +25,14 @@
             <div class="color-box" style="--color: var(--color-panelesBlancoPuro);">Fondo Blanco</div>
         </div>
 
-
+        <!-- Iconos (falta añadir más) -->
         <h1>H1 - Este HTML visual será eliminado en la primera versión final</h1>
-        <h2>H2 - Iconos Disponibles</h2>
+        <h2>H2 - Algunos iconos/logo disponible en app-proa/icons</h2>
         <div class="galeria-iconos">
-            <div class="icono-item"><img src="../icons/administracionPÀS.svg" alt="administracionPAS"><span>administracionPAS</span></div>
+            <div class="icono-item"><img src="../icons/administracionPAS.svg" alt="administracionPAS"><span>administracionPAS</span></div>
             <div class="icono-item"><img src="../icons/advertencia.svg" alt="advertencia"><span>advertencia</span></div>
             <div class="icono-item"><img src="../icons/advertenciaFecha.svg" alt="advertenciaFecha"><span>advertenciaFecha</span></div>
             <div class="icono-item"><img src="../icons/anyadir.svg" alt="anyadir"><span>anyadir</span></div>
-            <div class="icono-item"><img src="../icons/Avisos.svg" alt="Avisos"><span>Avisos en blanco</span></div>
             <div class="icono-item"><img src="../icons/examenes.svg" alt="examenes"><span>examenes</span></div>
             <div class="icono-item"><img src="../icons/fecha.svg" alt="fecha"><span>fecha</span></div>
             <div class="icono-item"><img src="../icons/flechaScroll.svg" alt="flechaScroll"><span>flechaScroll</span></div>
@@ -41,23 +42,26 @@
             <div class="icono-item"><img src="../icons/iconoExamen.svg" alt="iconoExamen"><span>iconoExamen</span></div>
             <div class="icono-item"><img src="../icons/menu.svg" alt="menu"><span>menu</span></div>
             <div class="icono-item"><img src="../icons/menuPAS.svg" alt="menuPAS"><span>menuPAS</span></div>
-            <div class="icono-item"><img src="../icons/Perfil.svg" alt="Perfil"><span>Perfil en blanco</span></div>
             <div class="icono-item"><img src="../icons/pesoExamen.svg" alt="pesoExamen"><span>pesoExamen</span></div>
             <div class="icono-item"><img src="../icons/recursos.svg" alt="recursos"><span>recursos</span></div>
             <div class="icono-item"><img src="../icons/logoAzul.svg" alt="logoAzul"><span>logo PROA azul</span></div>
-            <div class="icono-item"><img src="../icons/logoBlanco.svg" alt="logoBlanco"><span>logo PROA blanco</span></div>
+            <div class="icono-item"><img src="../icons/calificaciones.svg" alt="calificaciones"><span>calificaciones</span></div>
+            <div class="icono-item"><img src="../icons/clasesEnVivo.svg" alt="clasesEnVivo"><span>clases en vivo</span></div>
+            <div class="icono-item"><img src="../icons/tareas.svg" alt="tareas"><span>tareas</span></div>
         </div>
 
-        <h3>H3 - Mejor una carpeta de iconos para todo PROA, los iconos se repiten en todos los roles</h3>
+        <h3>H3 - Mejor una carpeta de iconos para todo PROA, los iconos se repiten en muchos roles</h3>
         <h4>H4 - En los botones ¿hay un problema? Cuando una está pulsado es igual que el que tiene al lado (por ejemplo, exámenes)</h4>
         <h5>H5 - Solución: quedarse con uno de los dos</h5>
+        <h6>H6 - Hay que darle unas vueltas a los diferentes tamaños de las fuentes en los Mockups o no.</h6>
+        <p>Esto es un párrafo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aut eius id nihil, numquam pariatur perspiciatis, quas quibusdam quo reiciendis repellendus rerum saepe tenetur? A corporis dolorum nam quibusdam soluta?</p>
 
         <button class="btn">Haz clic aquí</button>
         <button class="btn-secundario">Haz clic aquí</button>
 
         <!-- Input de búsqueda con ícono a la izquierda -->
         <div class="input-con-icono">
-            <img src="../pas/icons/search.svg" alt="Buscar" class="icono-buscador">
+            <img src="../icons/search.svg" alt="Buscar" class="icono-buscador">
             <input type="text" class="input-base input-textoBusqueda" placeholder="Buscar asignaturas...">
         </div>
 
@@ -69,7 +73,7 @@
                 <option>Informática</option>
                 <option>Electrónica</option>
             </select>
-            <img src="../pas/icons/dropdown.svg" alt="Flecha" class="icono-dropdown">
+            <img src="../icons/dropdown.svg" alt="Flecha" class="icono-dropdown">
         </div>
 
         <!-- Dropdown Asignaturas -->
@@ -108,15 +112,6 @@
                         <div class="radio-grupo">
                             <input type="radio" id="opcion-b" name="pregunta1">
                             <label for="opcion-b">B.</label>
-                        </div>
-                        <input type="text" class="input-base input-respuesta" placeholder="Escribe la respuesta aquí...">
-                            <img src="../icons/trash.svg" alt="Eliminar" class="icono-eliminar">
-                    </div>
-
-                    <div class="respuesta-opcion">
-                        <div class="radio-grupo">
-                            <input type="radio" id="opcion-c" name="pregunta1">
-                            <label for="opcion-c">C.</label>
                         </div>
                         <input type="text" class="input-base input-respuesta" placeholder="Escribe la respuesta aquí...">
                             <img src="../icons/trash.svg" alt="Eliminar" class="icono-eliminar">
