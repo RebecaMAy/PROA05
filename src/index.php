@@ -12,7 +12,12 @@
 </head>
 <body>
 
-<?php include 'app-gti/includes/header.inc'; ?>
+<?php
+$usuario = json_decode(file_get_contents("api/data/usuarioActivo.json"));
+$logueado = $usuario && $usuario->logeado;
+$rutaBase = "app-gti/";
+include $logueado ? 'app-gti/includes/headerLogueado.inc' : 'app-gti/includes/headerNoLogueado.inc';
+?>
 
 <!-- Aquí irá el contenido de la landing -->
 <main>

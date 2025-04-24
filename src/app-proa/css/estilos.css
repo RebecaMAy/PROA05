@@ -159,6 +159,10 @@ label {
     transition: all 0.2s ease-in-out;
 }
 
+.btn:active {
+    transform: scale(0.98);
+}
+
 .btn:hover {
     color: var(--color-primario);
     background-color: var(--color-panelesBlancoPuro);
@@ -178,10 +182,33 @@ label {
     transition: all 0.2s ease-in-out;
 }
 
+.btn-secundario:active {
+    transform: scale(0.98);
+}
+
 .btn-secundario:hover {
     color: white; /* Texto en blanco */
     background-color: var(--color-primario);
     border-color: var(--color-primario);
+}
+
+@media (max-width: 768px) {
+    .btn,
+    .btn-secundario {
+        font-size: 1em;
+        padding: 0.5em 1em;
+        border-radius: 8px;
+    }
+
+    .btn-agregar {
+        font-size: 0.875em;
+        padding: 0.5em;
+    }
+
+    .boton-opcion {
+        font-size: 0.875em;
+        padding: 0.5em 0.75em;
+    }
 }
 /* endregion */
 

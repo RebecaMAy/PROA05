@@ -1,0 +1,14 @@
+[
+  {
+    "nombre": "Daniel",
+    "apellidos": "Palacio",
+    "correo": "dapasa@har.upv.es",
+    "clave": "1234"
+  },
+  {
+    "nombre": "José Luis",
+    "apellidos": "Gimenez",
+    "correo": "jogilo@upvnet.upv.es",
+    "clave": "4567"
+  }
+]

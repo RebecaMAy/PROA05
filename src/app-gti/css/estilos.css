@@ -196,6 +196,10 @@ label {
     transition: all 0.2s ease-in-out;
 }
 
+.btnCTA:active {
+    transform: scale(0.98);
+}
+
 .btnCTA:hover {
     background-color: var(--color-blancoPuro);
     color: var(--color-principal);
@@ -215,10 +219,30 @@ label {
     transition: all 0.2s ease-in-out;
 }
 
+.btn:active {
+    transform: scale(0.98);
+}
+
 .btn:hover {
     background-color: var(--color-blancoPuro);
     color: var(--color-principal);
     border: 2px solid var(--color-principal);
+}
+
+.btn-secundario {
+    background-color: var(--color-blancoPuro);
+    color: var(--color-principal);
+    border: 2px solid var(--color-principal);
+}
+.btn-secundario:hover {
+    filter: brightness(0.95);
+}
+
+.btn-principal:hover {
+    background-color: var(--color-principal) !important;
+    color: var(--color-blancoPuro) !important;
+    border: none !important;
+    filter: brightness(0.9);
 }
 /* endregion */
 
@@ -235,6 +259,11 @@ label {
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
+
+.btnCTA-PROA:active {
+    transform: scale(0.98);
+}
+
 
 .btnCTA-PROA:hover {
     background-color: var(--color-blancoPuro);
@@ -255,6 +284,11 @@ label {
     transition: all 0.2s ease-in-out;
 }
 
+.btnPROA:active {
+    transform: scale(0.98);
+}
+
+
 .btnPROA:hover {
     background-color: var(--color-blancoPuro);
     color: var(--color-PROA);
@@ -274,11 +308,45 @@ label {
     transition: all 0.2s ease-in-out;
 }
 
+.btnPROA-secundario:active {
+    transform: scale(0.98);
+}
+
 .btnPROA-secundario:hover {
     background-color: var(--color-PROA);
     color: var(--color-blancoPuro);
     border: 2px solid var(--color-PROA);
 }
+
+@media (max-width: 768px) {
+    .btn,
+    .btnCTA,
+    .btnCTA-PROA,
+    .btnPROA,
+    .btnPROA-secundario,
+    .btn-principal,
+    .btn-secundario {
+        font-size: 1em;
+        padding: 0.8em 1.3em;
+        border-radius: 8px;
+    }
+
+    .btnCTA,
+    .btnCTA-PROA {
+        font-size: 1.125em;
+    }
+
+    .btnPROA,
+    .btnPROA-secundario {
+        font-size: 1em;
+    }
+
+    .btn-principal,
+    .btn-secundario {
+        font-size: 1em;
+    }
+}
+
 /* endregion */
 
 /* region --- ESTILOS FORMULARIO, CAMPOS LOGIN, REGISTRO Y SUGERENCIAS/CONTACTO--- */

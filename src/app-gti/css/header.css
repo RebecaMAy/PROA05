@@ -87,17 +87,55 @@ header nav a:focus {
 
 #hamburguesa > div {
     background-color: var(--color-principal);
-    width: 32px;
-    height: 4px;
+    width: 35px;
+    height: 7px;
 }
 
 #hamburguesa > div:not(:last-child) { /* Last-child para que el último no tenga margen */
     margin-bottom: 4px;
 }
+/*endregion*/
 
 nav.menu-movil {
     display: none;
 }
+
+/* region --- POPUP CIERRE DE SESIÓN --- */
+#popup-cerrar-sesion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#popup-cerrar-sesion.activo {
+    display: flex;
+}
+
+.popup-contenido {
+    background-color: var(--color-blancoPuro);
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+.popup-botones {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1.5em;
+    flex-wrap: wrap;
+}
+/*endregion*/
 
 @media (max-width: 911px) {
     body.menu-abierto {
@@ -115,8 +153,8 @@ nav.menu-movil {
     nav.menu-movil {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-start;
+        align-items: flex-start;
         position: fixed;
         top: 0;
         left: 0;
@@ -125,8 +163,9 @@ nav.menu-movil {
         background-color: var(--color-blancoPuro);
         backdrop-filter: blur(4px); /* Desenfoque al fondo */
         z-index: 9999; /* Se superpone por encima de todo */
-        gap: 2em;
-        font-size: 1.5em;
+        padding: 1em;
+        gap: 1.5em;
+        font-size: 1.25em;
         animation: fadeIn 0.3s ease-out;
     }
 
@@ -147,19 +186,62 @@ nav.menu-movil {
         color: var(--color-principal);
     }
 
-    nav.menu-movil:not(.oculto) #cerrar-menu { /* Solo cuando la clase oculto no está activa se muestra el menú */
+    nav.menu-movil:not(.oculto) #cerrar-menu {
         display: block;
     }
 
-    nav.menu-movil a {
-        font-family: var(--fuente-lato);
-        color: var(--color-textos);
-        text-decoration: none;
-        transition: color 0.2s ease-in-out;
+    .menu-superior {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    nav.menu-movil a:hover {
+    .logo-menu {
+        height: 70px;
+        margin-top: 0.3em;
+    }
+
+    .menu-enlaces {
+        list-style: none;
+        padding: 0;
+        margin: 2em 0;
+        width: 100%;
+    }
+
+    .menu-enlaces li {
+        padding: 0.75em 0;
+        border-bottom: 1px solid var(--color-panelesBordesGris);
+    }
+
+    .menu-enlaces a {
+        display: block;
+        width: 100%;
+        color: var(--color-textos);
+        font-family: var(--fuente-lato);
+        text-decoration: none;
+        font-size: 1.25em;
+        padding-left: 1em;
+    }
+
+    .menu-enlaces a:hover {
         color: var(--color-principal);
+    }
+
+    .menu-acciones {
+        margin-top: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        padding: 0 1em;
+    }
+
+    .menu-acciones .btn {
+        width: 100%;
+        padding: 1em;
+        font-size: 1em;
+        border-radius: 8px;
     }
 
     .header-derecha nav:not(.menu-movil),
@@ -167,7 +249,7 @@ nav.menu-movil {
         display: none;
     }
 
-    @keyframes fadeIn { /* Animación para cuando aparece el menú hamburguesa */
+    @keyframes fadeIn {
         from {
             opacity: 0;
             transform: scale(0.98);
