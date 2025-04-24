@@ -49,6 +49,7 @@ a { color: inherit; }
     --color-primario: #459CFF;
     --color-secundario: #51A3FD;
     --color-terciario: #DCEBFF;
+    --color-resalteOscuro: #05204A;
     --color-inputError: #F0ADAD;
     --color-mensajeError: #FF4040;
     --color-exito: #BAE6A2;

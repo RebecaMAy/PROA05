@@ -19,10 +19,5 @@ $rutaBase = "app-gti/";
 include $logueado ? 'app-gti/includes/headerLogueado.inc' : 'app-gti/includes/headerNoLogueado.inc';
 ?>
 
-<!-- Aquí irá el contenido de la landing -->
-<main>
-    <!-- Vacío por ahora -->
-</main>
-
 </body>
 </html>

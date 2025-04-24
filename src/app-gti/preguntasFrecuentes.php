@@ -14,7 +14,7 @@
 <?php
 $usuario = json_decode(file_get_contents("../api/data/usuarioActivo.json"));
 $logueado = $usuario && $usuario->logeado;
-$rutaBase = "./"; // porque ya está dentro de app-gti
+$rutaBase = "./";
 include $logueado ? 'includes/headerLogueado.inc' : 'includes/headerNoLogueado.inc';
 ?>
 
