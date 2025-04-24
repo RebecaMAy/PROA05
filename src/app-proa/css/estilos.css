@@ -26,21 +26,19 @@ a { color: inherit; }
 /* region --- FUENTES --- */
 @font-face {
     font-family: 'Lato';
-    src: url('src/fonts/Lato/Lato-Regular.woff2') format('woff2');
+    src: url('../../fonts/Lato/Lato-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'Lato';
-    src: url('src/fonts/Lato/Lato-Bold.woff2') format('woff2');
+    src: url('../../fonts/Lato/Lato-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'Lato';
-    src: url('src/fonts/Lato/Lato-Light.woff2') format('woff2');
+    src: url('../../fonts/Lato/Lato-Light.woff2') format('woff2');
     font-weight: 300;
     font-style: normal;
 }

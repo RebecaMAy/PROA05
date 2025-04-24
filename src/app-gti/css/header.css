@@ -1,0 +1,180 @@
+/* region --- RESET (Importante para cada CSS) --- */
+* { margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; }
+
+body { min-height: 100dvh; }
+input, button, textarea, select { font: inherit; }
+
+p { text-wrap: pretty; }
+h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+
+img, video, svg { height: auto; max-width: 100%; }
+
+@media (prefers-reduced-motion: reduce)  {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+        transition: none;
+    }
+}
+
+a { color: inherit; }
+/* endregion */
+
+:root {
+    --header-height: 80px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-blancoPuro);
+    color: var(--color-textos);
+    padding: 0 2em 0 0;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--fuente-lato);
+    font-size: 1.375em;
+    font-weight: 400;
+    border-bottom: 1px solid var(--color-panelesBordesGris)
+}
+
+.header-izquierda {
+    display: flex;
+    justify-content: flex-start;
+    margin-left:0.3em;
+    margin-top:0.3em;
+}
+
+.header-derecha {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logo {
+    height: 65px;
+    width: auto;
+}
+
+header nav a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease-in-out;
+    margin-left: 3.125em;
+}
+
+header nav a:hover,
+header nav a:focus {
+    color: var(--color-principal);
+}
+
+.icono-perfil {
+    width: 42px;
+    height: 42px;
+    margin-left: 3.125em;
+}
+
+/* region --- MENÚ HAMBURGUESA --- */
+#hamburguesa {
+    background-color: transparent;
+    border: none;
+    display: none;
+}
+
+#hamburguesa > div {
+    background-color: var(--color-principal);
+    width: 32px;
+    height: 4px;
+}
+
+#hamburguesa > div:not(:last-child) { /* Last-child para que el último no tenga margen */
+    margin-bottom: 4px;
+}
+
+nav.menu-movil {
+    display: none;
+}
+
+@media (max-width: 911px) {
+    body.menu-abierto {
+        overflow: hidden;
+    }
+
+    #hamburguesa {
+        display: block;
+    }
+
+    nav.menu-movil.oculto {
+        display: none;
+    }
+
+    nav.menu-movil {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--color-blancoPuro);
+        backdrop-filter: blur(4px); /* Desenfoque al fondo */
+        z-index: 9999; /* Se superpone por encima de todo */
+        gap: 2em;
+        font-size: 1.5em;
+        animation: fadeIn 0.3s ease-out;
+    }
+
+    #cerrar-menu { /* Botón de cerrar */
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        background: none;
+        border: none;
+        color: var(--color-textos);
+        font-size: 1.75em;
+        cursor: pointer;
+        display: none;
+    }
+
+    #cerrar-menu:hover,
+    #cerrar-menu:focus {
+        color: var(--color-principal);
+    }
+
+    nav.menu-movil:not(.oculto) #cerrar-menu { /* Solo cuando la clase oculto no está activa se muestra el menú */
+        display: block;
+    }
+
+    nav.menu-movil a {
+        font-family: var(--fuente-lato);
+        color: var(--color-textos);
+        text-decoration: none;
+        transition: color 0.2s ease-in-out;
+    }
+
+    nav.menu-movil a:hover {
+        color: var(--color-principal);
+    }
+
+    .header-derecha nav:not(.menu-movil),
+    .icono-perfil {
+        display: none;
+    }
+
+    @keyframes fadeIn { /* Animación para cuando aparece el menú hamburguesa */
+        from {
+            opacity: 0;
+            transform: scale(0.98);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
