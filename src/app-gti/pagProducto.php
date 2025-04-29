@@ -98,5 +98,6 @@ include $logueado ? 'includes/headerLogueado.inc' : 'includes/headerNoLogueado.i
         </div>
     </div>
 </section>
+
 </body>
 </html>

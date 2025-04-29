@@ -8,7 +8,9 @@
     <title>Contacto</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/contacto.css">
     <script src="js/menu.js" defer></script>
+    <script src="js/contacto.js" defer></script>
 </head>
 <body>
 <?php // PROVISIONAL SIN EL LOGIN
@@ -18,7 +20,66 @@ $rutaBase = "./";
 include $logueado ? 'includes/headerLogueado.inc' : 'includes/headerNoLogueado.inc';
 ?>
 
-<h2>Contacto</h2>
+<section class="contacto">
+    <form class="formulario-contacto">
+        <h2>Contáctanos</h2>
+        <p class="parrafo-principal">
+            ¿Tienes alguna duda sobre nuestros productos o servicios? Escríbenos y te responderemos lo antes posible.
+        </p>
+
+        <div class="grupo-campos">
+            <div class="campo">
+                <label for="nombre">Nombres & Apellidos *</label>
+                <input type="text" id="nombre" class="input-base" placeholder="Tu nombre" />
+            </div>
+
+            <div class="campo">
+                <label for="email">Correo institucional *</label>
+                <input type="email" id="email" class="input-base" placeholder="correo@institucion.edu" />
+            </div>
+
+            <div class="campo">
+                <label for="institucion">Nombre de la institución *</label>
+                <input type="text" id="institucion" class="input-base" placeholder="Nombre de tu institución" />
+            </div>
+
+            <div class="campo">
+                <label for="tipo">Tipo de institución *</label>
+                <div class="input-dropdown">
+                    <select id="tipo" class="seleccionador-dropdown">
+                        <option selected disabled hidden>Selecciona tu institución</option>
+                        <option>Universidad</option>
+                        <option>Instituto</option>
+                        <option>Colegio</option>
+                        <option>Academia Particular</option>
+                        <option>Otros (especificar en campo mensaje)</option>
+                    </select>
+                    <img src="icons/dropdown.svg" alt="Flecha" class="icono-dropdown">
+                </div>
+            </div>
+
+            <div class="campo campo-largo">
+                <label for="producto">Por favor, selecciona el producto con el que tengas dudas *</label>
+                <div class="input-dropdown">
+                    <select id="producto" class="seleccionador-dropdown">
+                        <option selected disabled hidden>Selecciona un producto</option>
+                        <option>PROA</option>
+                    </select>
+                    <img src="icons/dropdown.svg" alt="Flecha" class="icono-dropdown">
+                </div>
+            </div>
+
+            <div class="campo campo-largo">
+                <label for="mensaje">Mensaje *</label>
+                <textarea id="mensaje" class="input-contacto" placeholder="Escribe aquí tu duda" rows="6"></textarea>
+            </div>
+        </div>
+
+        <div class="boton-contacto">
+            <button type="submit" class="btn">Enviar</button>
+        </div>
+    </form>
+</section>
 
 </body>
 </html>

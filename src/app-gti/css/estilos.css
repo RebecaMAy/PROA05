@@ -74,6 +74,7 @@ a { color: inherit; }
     --color-panelesBordesGris: #CCCCCC;
 
     --color-inputsSeleccionados: #6b6b6b;
+    --color-rojoError: #fda7a7;
 
     --fuente-lato: 'Lato', sans-serif;
     --fuente-lora: 'Lora', serif;
@@ -378,6 +379,7 @@ label {
 
     background-color: transparent;
     padding: 0.6em 0;
+    padding-left: 1em;
 }
 
 .input-base:focus {
@@ -486,11 +488,6 @@ textarea {
     gap: 1em; /* espacio entre campos */
     max-width: 600px;
     margin: 0 auto;
-}
-
-label[for="email"],
-label[for="password"] {
-    margin-bottom: -0.75em; /* exactamente el negativo del gap general, para ver como se verían esos campos */
 }
 
 .galeria-iconos {
