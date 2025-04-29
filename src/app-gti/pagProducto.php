@@ -62,6 +62,29 @@ include $logueado ? 'includes/headerLogueado.inc' : 'includes/headerNoLogueado.i
     </div>
 </section>
 
+<!-- Tercera sección -->
+<section class="seccion-diferenciadora">
+    <div class="contenedor-diferenciador">
+        <div class="texto-diferenciador">
+            <h2>¿Qué hace a PROA diferente?</h2>
+            <p class="parrafo-secundario">
+                PROA es el primer módulo educativo desarrollado por GTI: un campus virtual diseñado específicamente para instituciones educativas, inicialmente orientado a universidades.
+            </p>
+            <p class="parrafo-secundario">
+                En su versión mínima viable, PROA incluye funcionalidades clave como exámenes y calificaciones, tanto para el profesor como para el alumno, además de las funciones de gestión del PAS. Cada usuario accede con credenciales proporcionadas al registrarse, lo que permite asignar automáticamente su rol como alumno, profesor o PAS.
+            </p>
+            <p class="parrafo-secundario">
+                Nuestra propuesta se diferencia por ofrecer una interfaz clara, intuitiva y centrada en la experiencia de usuario, eliminando las frustraciones comunes de las plataformas educativas tradicionales.
+            </p>
+            <p class="parrafo-secundario">
+                Además, ofrecemos una demo funcional para que los representantes universitarios puedan explorar el producto antes de contratarlo, una práctica poco común en el sector.
+            </p>
+        </div>
+        <div class="imagen-diferenciador">
+            <img src="img/pcFondoPROA.svg" alt="Vista de PROA en PC">
+        </div>
+    </div>
+</section>
 
 </body>
 </html>
