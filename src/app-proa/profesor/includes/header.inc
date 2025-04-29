@@ -1,6 +1,8 @@
 <header>
     <div class="header-izquierda">
-        <img src="../icons/logoBlanco.svg" alt="Logo PROA" class="logo">
+        <a href="./index.php">
+            <img src="../icons/logoBlanco.svg" alt="Logo PROA" class="logo">
+        </a>
     </div>
 
     <div class="header-derecha">

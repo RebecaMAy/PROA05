@@ -11,7 +11,7 @@
     <script src="js/menu.js" defer></script>
 </head>
 <body>
-<?php
+<?php // PROVISIONAL SIN EL LOGIN
 $usuario = json_decode(file_get_contents("../api/data/usuarioActivo.json"));
 $logueado = $usuario && $usuario->logeado;
 $rutaBase = "./";

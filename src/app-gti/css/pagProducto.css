@@ -1,0 +1,55 @@
+.contenedor {
+    position: relative;
+    min-height: calc(100vh - 80px); /* Ajusta la altura restando la del header */
+    background: url('../img/imagenPagProducto.svg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-textos);
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.contenedor::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; /* Se definen con 0 para que ocupen lo mismo que el contenedor */
+    background-color: rgba(155, 201, 253, 0.25); /* Azul translúcido */
+}
+
+
+.contenedor h1,
+.contenedor p,
+.contenedor .cta-contenedor {
+    position: relative;
+}
+
+/* Espaciado entre elementos */
+.contenedor h1 {
+    margin-bottom: 4.3rem;
+}
+
+.contenedor p.parrafo-principal {
+    margin-bottom: 4.5rem;
+    max-width: 1000px;
+}
+
+.cta-contenedor {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor p.parrafo-secundario {
+    margin-bottom: 1.625em;
+}
+
+.btnCTA-PROA {
+    text-decoration: none;
+    display: inline-block;
+}
