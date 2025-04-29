@@ -1,3 +1,4 @@
+/* region --- Primera sección --- */
 .contenedor {
     position: relative;
     min-height: calc(100vh - 80px); /* Ajusta la altura restando la del header */
@@ -53,3 +54,175 @@
     text-decoration: none;
     display: inline-block;
 }
+/*endregion*/
+
+/* region --- Segunda sección --- */
+.caracteristicas-principales {
+    text-align: center;
+    padding: 4em 2em;
+    background-color: var(--color-blancoPuro);
+    color: var(--color-textos);
+}
+
+.caracteristicas-principales h2 {
+    margin-bottom: 2.5em;
+}
+
+.caracteristicas-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+.caracteristica {
+    flex: 1 1 250px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.caracteristica img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.625em;
+}
+
+.caracteristica h3 {
+    font-family: var(--fuente-lato);
+    margin-bottom: 1.30em;
+}
+
+.caracteristica p {
+    font-family: var(--fuente-lato);
+    line-height: 1.5; /* El navegador asigna 24px de altura total para cada línea */
+}
+
+@media (max-width: 900px) {
+    .caracteristicas-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .caracteristica {
+        margin-bottom: 2.5em;
+    }
+}
+/*endregion*/
+
+/* region --- Tercera sección: ¿Qué hace a PROA diferente? --- */
+.seccion-diferenciadora {
+    background-color: rgba(159, 204, 255, 0.15); /* #9FCCFF al 15% */
+    padding: 6em 3em;
+    color: var(--color-textos);
+}
+
+.contenedor-diferenciador {
+    display: flex;
+    gap: 3em;
+    max-width: 1300px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.texto-diferenciador {
+    flex: 1 1 500px;
+}
+
+.texto-diferenciador p {
+    margin-top: 1.6em;
+}
+
+.imagen-diferenciador {
+    flex: 1 1 300px;
+    max-width: 500px;
+    display: flex;
+    align-items: flex-start;
+    margin-top: 5.5em;
+}
+
+.imagen-diferenciador img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 1200px) {
+    .imagen-diferenciador {
+        display: flex;
+        align-items: center;
+        margin-top: 4.5em;
+    }
+}
+
+@media (max-width: 1100px) {
+    .contenedor-diferenciador {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .imagen-diferenciador {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-diferenciador {
+        gap: 0.7em;
+    }
+    .seccion-diferenciadora {
+        padding: 4em 2em;
+    }
+}
+/*endregion*/
+
+/* region --- Última sección: CTA final --- */
+.seccion-cta-final {
+    background-color: var(--color-blancoPuro);
+    padding: 6em 2em;
+    color: var(--color-textos);
+}
+
+.cta-final-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: 0em;
+    text-align: center;
+    flex-direction: column;
+}
+
+.cta-final-texto {
+    flex: 2 1;
+}
+
+.cta-final-texto h2 {
+    margin-bottom: 1em;
+}
+
+.cta-final-texto p {
+    line-height: 1.5;
+}
+
+.cta-final-boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.btnPROA {
+    text-decoration: none;
+}
+/* endregion */
+
+
