@@ -1,3 +1,4 @@
+/* region --- Primera sección --- */
 .contenedor {
     position: relative;
     min-height: calc(100vh - 80px); /* Ajusta la altura restando la del header */
@@ -53,3 +54,62 @@
     text-decoration: none;
     display: inline-block;
 }
+/*endregion*/
+
+/* region --- Segunda sección --- */
+.caracteristicas-principales {
+    text-align: center;
+    padding: 4em 2em;
+    background-color: var(--color-blancoPuro);
+    color: var(--color-textos);
+}
+
+.caracteristicas-principales h2 {
+    margin-bottom: 2.5em;
+}
+
+.caracteristicas-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+.caracteristica {
+    flex: 1 1 250px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.caracteristica img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.625em;
+}
+
+.caracteristica h3 {
+    font-family: var(--fuente-lato);
+    margin-bottom: 1.30em;
+}
+
+.caracteristica p {
+    font-family: var(--fuente-lato);
+    line-height: 1.5; /* El navegador asigna 24px de altura total para cada línea */
+}
+
+@media (max-width: 900px) {
+    .caracteristicas-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .caracteristica {
+        margin-bottom: 2.5em;
+    }
+}
+/*endregion*/
+

@@ -94,7 +94,7 @@ h2 {
 
 h3 {
     font-family: var(--fuente-lato);
-    font-size: 1.75em;
+    font-size: 1.5em;
     font-weight: 700;
 }
 
@@ -124,7 +124,7 @@ label {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     h1 {
         font-size: 2.125em;
     }
@@ -169,7 +169,7 @@ label {
     line-height: 1.5;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .parrafo-principal {
         font-size: 1.125em;
     }
@@ -318,7 +318,7 @@ label {
     border: 2px solid var(--color-PROA);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .btn,
     .btnCTA,
     .btnCTA-PROA,

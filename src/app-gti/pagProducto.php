@@ -25,6 +25,7 @@ $rutaBase = "./";
 include $logueado ? 'includes/headerLogueado.inc' : 'includes/headerNoLogueado.inc';
 ?>
 
+<!-- Primera seccion -->
 <section class="contenedor">
     <h1>Descubre PROA</h1>
     <p class="parrafo-principal">
@@ -38,6 +39,29 @@ include $logueado ? 'includes/headerLogueado.inc' : 'includes/headerNoLogueado.i
         <a href="<?= $ctaLink ?>" class="btnCTA-PROA">Probar DEMO</a>
     </div>
 </section>
+
+<!-- Segunda seccion -->
+<section class="caracteristicas-principales">
+    <h2>Características Principales</h2>
+    <div class="caracteristicas-grid">
+        <div class="caracteristica">
+            <img src="icons/demoMultiperfil.svg" alt="Demo multiperfil">
+            <h3>DEMO multiperfil</h3>
+            <p class="parrafo-secundario">Prueba PROA como profesor, personal administrativo o alumno</p>
+        </div>
+        <div class="caracteristica">
+            <img src="icons/accesoMultiplataforma.svg" alt="Acceso multiplataforma">
+            <h3>Acceso multiplataforma</h3>
+            <p class="parrafo-secundario">Navega por PROA desde tu móvil, tablet o portátil sin perder claridad ni funciones</p>
+        </div>
+        <div class="caracteristica">
+            <img src="icons/interfazIntuitiva.svg" alt="Interfaz intuitiva">
+            <h3>Interfaz intuitiva</h3>
+            <p class="parrafo-secundario">Diseño centrado en el usuario para una experiencia fluida</p>
+        </div>
+    </div>
+</section>
+
 
 </body>
 </html>
