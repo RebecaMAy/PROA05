@@ -1,0 +1,114 @@
+.registro {
+    padding: 4em 3em;
+}
+
+.contenedor-registro {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 4em;
+    flex-wrap: wrap;
+}
+
+.registro-texto {
+    flex: 1 1 40%;
+}
+
+.registro-texto h2 {
+    text-align: left;
+    line-height: 1.3;
+    margin-bottom: 1em;
+}
+
+.registro-texto p {
+    text-align: left;
+    line-height: 1.6;
+}
+
+.registro-formulario{
+    margin-left: 2em;
+}
+
+.registro-formulario {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.registro-formulario .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.registro-formulario input,
+.registro-formulario select {
+    width: 100%;
+}
+
+.input-base {
+    width: 100%;
+}
+
+.input-dropdown {
+    width: 100%;
+}
+
+.seleccionador-dropdown {
+    width: 100%;
+}
+
+.registro-formulario .btn {
+    margin-top: 1em;
+    width: 100%;
+}
+
+.texto-secundario {
+    text-align: center;
+    font-family: var(--fuente-lato);
+    font-weight: 400;
+    font-size: 1.125em;
+    margin-top: -0.5em;
+}
+
+.enlace-secundario {
+    color: var(--color-principal);
+    text-decoration: none;
+    margin-left: 0.5em;
+    font-family: var(--fuente-lato);
+    font-weight: 500;
+    font-size: 1.125em;
+}
+
+.enlace-secundario:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 1056px) {
+    .contenedor-registro {
+        flex-direction: column;
+        gap: 3.5em;
+    }
+
+    .registro-texto,
+    .registro-formulario {
+        flex: 1 1 100%;
+    }
+
+    .registro-formulario {
+        margin-left: 0;
+        width:100%
+    }
+
+    .registro-formulario input,
+    .registro-formulario select,
+    .input-base,
+    .seleccionador-dropdown {
+        width: 100%;
+    }
+}
+
