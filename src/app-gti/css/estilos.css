@@ -435,17 +435,6 @@ textarea {
 /*endregion*/
 
 /* region --- ¡PROVISIONAL! PARA VER BIEN EL HTML --- */
-body {
-    justify-content: center;
-    align-items: center;
-}
-
-.contenedor {
-    max-width: 1000px;
-    width: 100%;
-    margin: 0 auto;
-}
-
 .paleta-colores {
     display: flex;
     flex-wrap: wrap;
