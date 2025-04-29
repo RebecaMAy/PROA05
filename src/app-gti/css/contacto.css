@@ -44,49 +44,6 @@
     padding: 0.8em 3em;
 }
 
-.campo-error {
-    border: 2px solid var(--color-rojoError) !important;
-    border-radius: 5px;
-}
-
-/* region --- POPUP CONTACTO --- */
-.popup-contenido {
-    position: relative;
-    padding: 3em 2em 2em;
-}
-
-.btn-cerrar-popup {
-    position: absolute;
-    top: 1em;
-    right: 1em;
-    background: none;
-    border: none;
-    color: var(--color-textos);
-    font-size: 1.5em;
-    cursor: pointer;
-    transition: color 0.2s ease-in-out;
-}
-
-.btn-cerrar-popup:hover,
-.btn-cerrar-popup:focus {
-    color: var(--color-principal);
-}
-
-.popup-superior {
-    margin-bottom: 1.5em;
-    text-align: center;
-}
-
-.popup-titulo {
-    font-size: 1.4em;
-    font-weight: bold;
-    font-family: var(--fuente-lato);
-    color: var(--color-principal);
-    display: inline-block;
-}
-/* endregion */
-
-
 @media (max-width: 768px) {
     .formulario-contacto {
         padding: 3em 2em;
@@ -105,4 +62,5 @@
     .btn {
         width: 100%;
     }
+
 }

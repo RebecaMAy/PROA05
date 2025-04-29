@@ -64,6 +64,10 @@ a { color: inherit; }
     background-color: var(--color-fondoPROAGris);
 }
 
+body {
+    font-family: var(--fuente-principal);
+}
+
 /* region --- HEADLINES PC Y MÓVIL --- */
 h1 {
     font-family: var(--fuente-principal);

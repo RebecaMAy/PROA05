@@ -80,6 +80,10 @@ a { color: inherit; }
     --fuente-lora: 'Lora', serif;
 }
 
+body {
+    font-family: var(--fuente-lato);
+}
+
 /* region --- HEADLINES PC Y MÓVIL --- */
 h1 {
     font-family: var(--fuente-lora);
@@ -566,5 +570,21 @@ textarea {
     height: 40px;
     margin-bottom: 0.5em;
     object-fit: contain;
+}
+/* endregion */
+
+/* region --- MENSAJES DE ERROR FORMULARIOS --- */
+.error-texto {
+    display: inline-block;
+    font-size: 0.85em;
+    color: var(--color-rojoError);
+    margin-left: 0.5em;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    .error-texto {
+        font-size: 0.7em;
+    }
 }
 /* endregion */

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/registro.css">
     <script src="js/menu.js" defer></script>
+    <script src="js/registro.js" defer></script>
 </head>
 <body>
 <?php // PROVISIONAL SIN EL LOGIN
@@ -40,11 +41,6 @@ include $logueado ? 'includes/headerLogueado.inc' : 'includes/headerNoLogueado.i
             </div>
 
             <div class="campo">
-                <label for="correo">Correo de la institución *</label>
-                <input type="email" id="correo" class="input-base" />
-            </div>
-
-            <div class="campo">
                 <label for="tipo">Tipo de institución *</label>
                 <div class="input-dropdown">
                     <select id="tipo" class="seleccionador-dropdown">
@@ -62,6 +58,11 @@ include $logueado ? 'includes/headerLogueado.inc' : 'includes/headerNoLogueado.i
             <div class="campo">
                 <label for="telefono">Teléfono *</label>
                 <input type="tel" id="telefono" class="input-base" />
+            </div>
+
+            <div class="campo">
+                <label for="correo">Correo de la institución *</label>
+                <input type="email" id="correo" class="input-base" />
             </div>
 
             <div class="campo">

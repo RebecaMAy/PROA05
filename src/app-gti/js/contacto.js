@@ -1,57 +1,75 @@
 document.querySelector('.formulario-contacto')?.addEventListener('submit', function (e) {
     e.preventDefault();
 
+    const formulario = this;
     let formularioValido = true;
 
-    const campos = this.querySelectorAll('input, select, textarea');
-
-    // Expresión regular para validar que el campo de email tenga un formato correcto
+    const campos = formulario.querySelectorAll('input, select, textarea');
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Recorre todos los campos del formulario para validarlos
-    campos.forEach(campo => {
-        campo.classList.remove('campo-error');
-    });
+    // Limpiar errores anteriores
+    formulario.querySelectorAll('label small').forEach(el => el.remove());
 
-    campos.forEach(campo => {
-        if (campo.tagName === 'SELECT' && (campo.selectedIndex === 0 || campo.value === "")) {
-            formularioValido = false;
-            campo.classList.add('campo-error');
+    function mostrarError(campo, mensaje) {
+        const label = formulario.querySelector(`label[for="${campo.id}"]`);
+        if (label) {
+            const small = document.createElement('small');
+            small.textContent = mensaje;
+            small.classList.add('error-texto');
+            label.appendChild(small);
         }
-
-        if ((campo.tagName === 'INPUT' || campo.tagName === 'TEXTAREA') && campo.value.trim() === '') {
-            formularioValido = false;
-            campo.classList.add('campo-error');
-        }
-
-        if (campo.id === 'email' && !emailRegex.test(campo.value.trim())) {
-            formularioValido = false;
-            campo.classList.add('campo-error');
-        }
-    });
-
-    if (!formularioValido) {
-        alert('Por favor, completa todos los campos correctamente antes de enviar el formulario.');
-        return;
+        formularioValido = false;
     }
 
-    // Si el formulario es válido, selecciona el popup y lo muestra
-    const popup = document.getElementById('popup-confirmacion');
-    popup.classList.add('activo');
-    document.body.classList.add('menu-abierto'); // Evita scroll de fondo
 
-    // Botón de cerrar dentro del popup
-    const btnCerrar = popup.querySelector('.btn-cerrar-popup');
+    campos.forEach(campo => {
+        const valor = campo.value.trim();
 
-    btnCerrar.addEventListener('click', () => {
-        // Oculta el popup
-        popup.classList.remove('activo');
-        document.body.classList.remove('menu-abierto');
+        if ((campo.tagName === 'INPUT' || campo.tagName === 'TEXTAREA') && valor === '') {
+            mostrarError(campo, 'Campo obligatorio');
+            return;
+        }
 
-        // Limpia todos los campos del formulario
-        this.reset();
+        if (campo.tagName === 'SELECT' && (campo.selectedIndex === 0 || campo.value === '')) {
+            mostrarError(campo, 'Campo obligatorio');
+            return;
+        }
 
-        // Limpia las clases de error
-        campos.forEach(campo => campo.classList.remove('campo-error'));
-    }, { once: true });
+        if (campo.id === 'nombre') {
+            const partes = valor.split(' ').filter(p => p);
+            if (partes.length < 2) {
+                mostrarError(campo, 'Debe incluir nombre y apellidos');
+            }
+        }
+
+        if (campo.id === 'email' && valor !== '' && !emailRegex.test(valor)) {
+            mostrarError(campo, 'Correo inválido');
+        }
+
+        if (campo.id === 'mensaje' && valor.length < 20) {
+            mostrarError(campo, 'El mensaje debe tener al menos 20 caracteres');
+        }
+    });
+
+
+    if (!formularioValido) return;
+
+    // Mostrar toast de éxito
+    const toast = document.createElement('div');
+    toast.textContent = 'Consulta enviada correctamente';
+    toast.style.position = 'fixed';
+    toast.style.bottom = '20px';
+    toast.style.right = '20px';
+    toast.style.padding = '1em 2em';
+    toast.style.backgroundColor = 'var(--color-principal)';
+    toast.style.color = '#fff';
+    toast.style.borderRadius = '8px';
+    toast.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+    toast.style.fontFamily = 'var(--fuente-lato)';
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+        toast.remove();
+        formulario.reset();
+    }, 2000);
 });

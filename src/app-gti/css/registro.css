@@ -87,7 +87,6 @@
     text-decoration: underline;
 }
 
-
 @media (max-width: 1056px) {
     .contenedor-registro {
         flex-direction: column;
@@ -109,6 +108,11 @@
     .input-base,
     .seleccionador-dropdown {
         width: 100%;
+    }
+
+    .texto-secundario,
+    .enlace-secundario {
+        font-size: 1em; /
     }
 }
 
