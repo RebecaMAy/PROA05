@@ -17,10 +17,7 @@
 .contenedor::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; /* Se definen con 0 para que ocupen lo mismo que el contenedor */
+    inset: 0;
     background-color: rgba(155, 201, 253, 0.25); /* Azul translúcido */
 }
 

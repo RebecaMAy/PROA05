@@ -318,7 +318,9 @@ label {
     color: var(--color-blancoPuro);
     border: 2px solid var(--color-PROA);
 }
+/* endregion */
 
+/* region --- BOTONES RESPONSIVES --- */
 @media (max-width: 480px) {
     .btn,
     .btnCTA,
@@ -328,7 +330,6 @@ label {
     .btn-principal,
     .btn-secundario {
         font-size: 1em;
-        padding: 0.8em 1.3em;
         border-radius: 8px;
     }
 
@@ -347,7 +348,59 @@ label {
         font-size: 1em;
     }
 }
+/* endregion */
 
+/* region --- POPUPS - CIERRE DE SESIÓN --- */
+.popup {
+    position: fixed;
+    inset: 0;
+    z-index: 9999; /* Se superpone a todo lo que tenga z-index menor */
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup.activo {
+    display: flex;
+}
+
+.popup-contenido {
+    background-color: var(--color-blancoPuro);
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.popup-botones {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1.5em;
+    flex-wrap: wrap;
+}
+
+.popup-botones .btn {
+    width: 100%;
+    padding: 0.7em;
+    font-size: 1.25em;
+    border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .popup-contenido {
+        padding: 1.5em;
+    }
+
+    .popup-botones .btn {
+        padding: 0.5em;
+    }
+}
 /* endregion */
 
 /* region --- ESTILOS FORMULARIO, CAMPOS LOGIN, REGISTRO Y SUGERENCIAS/CONTACTO--- */

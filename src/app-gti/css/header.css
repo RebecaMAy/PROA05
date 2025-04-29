@@ -70,46 +70,9 @@ header nav a:focus {
 #hamburguesa > div:not(:last-child) { /* Last-child para que el último no tenga margen */
     margin-bottom: 4px;
 }
-/*endregion*/
 
 nav.menu-movil {
     display: none;
-}
-
-/* region --- POPUP CIERRE DE SESIÓN --- */
-#popup-cerrar-sesion {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9999;
-    background-color: rgba(0, 0, 0, 0.4);
-    display: none;
-    align-items: center;
-    justify-content: center;
-}
-
-#popup-cerrar-sesion.activo {
-    display: flex;
-}
-
-.popup-contenido {
-    background-color: var(--color-blancoPuro);
-    padding: 2em;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-    max-width: 400px;
-    width: 90%;
-    text-align: center;
-}
-
-.popup-botones {
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-    margin-top: 1.5em;
-    flex-wrap: wrap;
 }
 /*endregion*/
 

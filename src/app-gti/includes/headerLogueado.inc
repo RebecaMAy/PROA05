@@ -46,12 +46,13 @@
 </nav>
 
 <!-- Popup de confirmación de cierre de sesión -->
-<div id="popup-cerrar-sesion" class="popup" role="dialog" aria-modal="true">
+<!-- Todos los estilos de este popup definidos en el css general estilos.css -->
+<div class="popup" role="dialog" aria-modal="true">
     <div class="popup-contenido">
-        <p class="parrafo-secundario">¿Estás seguro de que deseas cerrar sesión?</p>
+        <p class="parrafo-secundario">¿Estás seguro de que deseas continuar?</p>
         <div class="popup-botones">
-            <button class="btn btn-principal" id="cancelar-cierre">Cancelar</button>
-            <button class="btn btn-secundario" id="confirmar-cierre">Cerrar sesión</button>
+            <button class="btn btn-principal popup-cancelar">Cancelar</button>
+            <button class="btn btn-secundario popup-confirmar">Cerrar Sesión</button>
         </div>
     </div>
 </div>

@@ -20,6 +20,7 @@ $rutaBase = "./";
 include $logueado ? 'includes/headerLogueado.inc' : 'includes/headerNoLogueado.inc';
 ?>
 
+<!-- Formulario Contacto -->
 <section class="contacto">
     <form class="formulario-contacto">
         <h2>Contáctanos</h2>
@@ -80,6 +81,19 @@ include $logueado ? 'includes/headerLogueado.inc' : 'includes/headerNoLogueado.i
         </div>
     </form>
 </section>
+
+<!-- Popup de confirmación -->
+<div class="popup" id="popup-confirmacion">
+    <div class="popup-contenido">
+        <button class="btn-cerrar-popup" aria-label="Cerrar popup">✕</button>
+        <div class="popup-superior">
+            <span class="popup-titulo">Consulta enviada</span>
+        </div>
+        <p class="parrafo-secundario">
+            Su consulta ha sido enviada correctamente. Le responderemos lo antes posible.
+        </p>
+    </div>
+</div>
 
 </body>
 </html>
