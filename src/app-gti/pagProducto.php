@@ -86,5 +86,17 @@ include $logueado ? 'includes/headerLogueado.inc' : 'includes/headerNoLogueado.i
     </div>
 </section>
 
+<!-- Última sección -->
+<section class="seccion-cta-final">
+    <div class="cta-final-contenedor">
+        <div class="cta-final-texto">
+            <h2>¿Listo para transformar la educación?</h2>
+            <p class="parrafo-principal">Contáctanos para obtener más información sobre PROA y sobre cómo GTI puede beneficiar a tu institución.</p>
+        </div>
+        <div class="cta-final-boton">
+            <a href="contacto.php" class="btnPROA">Solicitar información</a>
+        </div>
+    </div>
+</section>
 </body>
 </html>

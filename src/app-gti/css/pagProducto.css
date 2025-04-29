@@ -182,5 +182,47 @@
 }
 /*endregion*/
 
+/* region --- Última sección: CTA final --- */
+.seccion-cta-final {
+    background-color: var(--color-blancoPuro);
+    padding: 6em 2em;
+    color: var(--color-textos);
+}
+
+.cta-final-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: 0em;
+    text-align: center;
+    flex-direction: column;
+}
+
+.cta-final-texto {
+    flex: 2 1;
+}
+
+.cta-final-texto h2 {
+    margin-bottom: 1em;
+}
+
+.cta-final-texto p {
+    line-height: 1.5;
+}
+
+.cta-final-boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.btnPROA {
+    text-decoration: none;
+}
+/* endregion */
 
 
