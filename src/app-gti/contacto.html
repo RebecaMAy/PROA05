@@ -9,16 +9,13 @@
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/contacto.css">
-    <script src="js/menu.js" defer></script>
+    <script src="js/header.js" defer></script>
     <script src="js/contacto.js" defer></script>
 </head>
 <body>
-<?php // PROVISIONAL SIN EL LOGIN
-$usuario = json_decode(file_get_contents("../api/data/usuarioActivo.json"));
-$logueado = $usuario && $usuario->logeado;
-$rutaBase = "./";
-include $logueado ? 'includes/headerLogueado.inc' : 'includes/headerNoLogueado.inc';
-?>
+
+<!-- Header - En el archivo js está el html en sí, según esté logueado se muestra uno y si no lo está otro. -->
+<div id="contenedor-header"></div>
 
 <!-- Formulario Contacto -->
 <section class="contacto">

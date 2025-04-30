@@ -9,15 +9,13 @@
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/login.css">
-    <script src="js/menu.js" defer></script>
+    <script src="js/header.js" defer></script>
+    <script src="js/login.js" defer></script>
 </head>
 <body>
-<?php
-$usuario = json_decode(file_get_contents("../api/data/usuarioActivo.json"));
-$logueado = $usuario && $usuario->logeado;
-$rutaBase = "./";
-include $logueado ? 'includes/headerLogueado.inc' : 'includes/headerNoLogueado.inc';
-?>
+
+<!-- Header - En el archivo js está el html en sí, según esté logueado se muestra uno y si no lo está otro. -->
+<div id="contenedor-header"></div>
 
 <section class="login">
     <form class="formulario-login">
@@ -39,7 +37,7 @@ include $logueado ? 'includes/headerLogueado.inc' : 'includes/headerNoLogueado.i
 
         <p class="texto-secundario">
             ¿No tienes una cuenta?
-            <a href="registro.php" class="enlace-secundario">Regístrate</a>
+            <a href="registro.html" class="enlace-secundario">Regístrate</a>
         </p>
     </form>
 </section>

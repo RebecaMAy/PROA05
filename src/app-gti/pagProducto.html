@@ -1,10 +1,3 @@
-<?php
-// Lógica de autenticación PROVISIONAL sin el login
-$usuario = json_decode(file_get_contents("../api/data/usuarioActivo.json"));
-$logueado = $usuario && $usuario->logeado;
-$ctaLink = $logueado ? "../app-proa/index.php" : "login.php";
-$rutaBase = "./";
-?>
 <!doctype html>
 <html lang="es">
 <head>
@@ -16,14 +9,13 @@ $rutaBase = "./";
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/pagProducto.css">
-    <script src="js/menu.js" defer></script>
+    <script src="js/header.js" defer></script>
+    <script src="js/pagProducto.js" defer></script>
 </head>
 <body>
 
-<?php
-// Mostrar el header según el estado de login
-include $logueado ? 'includes/headerLogueado.inc' : 'includes/headerNoLogueado.inc';
-?>
+<!-- Header - En el archivo js está el html en sí, según esté logueado se muestra uno y si no lo está otro. -->
+<div id="contenedor-header"></div>
 
 <!-- Primera seccion -->
 <section class="contenedor">
@@ -36,7 +28,7 @@ include $logueado ? 'includes/headerLogueado.inc' : 'includes/headerNoLogueado.i
         <p class="parrafo-secundario">
             Regístrate y prueba la demo
         </p>
-        <a href="<?= $ctaLink ?>" class="btnCTA-PROA">Probar DEMO</a>
+        <a id="ctaDemo" class="btnCTA-PROA">Probar DEMO</a>
     </div>
 </section>
 
@@ -94,7 +86,7 @@ include $logueado ? 'includes/headerLogueado.inc' : 'includes/headerNoLogueado.i
             <p class="parrafo-principal">Contáctanos para obtener más información sobre PROA y sobre cómo GTI puede beneficiar a tu institución.</p>
         </div>
         <div class="cta-final-boton">
-            <a href="contacto.php" class="btnPROA">Solicitar información</a>
+            <a href="contacto.html" class="btnPROA">Solicitar información</a>
         </div>
     </div>
 </section>

@@ -72,65 +72,22 @@ document.querySelector('.registro-formulario')?.addEventListener('submit', funct
 
     if (!formularioValido) return;
 
-    // Enviar datos al backend PHP para guardar el usuario en el json
-    const [nombre, ...apellidosArr] = campos.nombre.value.trim().split(' ');
-    const apellidos = apellidosArr.join(' ') || '';
+    // Simulación de registro exitoso (sin guardar en JSON ni llamar a PHP)
+    const toast = document.createElement('div');
+    toast.textContent = 'Registro exitoso. Redirigiendo...';
+    toast.style.position = 'fixed';
+    toast.style.bottom = '20px';
+    toast.style.right = '20px';
+    toast.style.padding = '1em 2em';
+    toast.style.backgroundColor = 'var(--color-principal)';
+    toast.style.color = '#fff';
+    toast.style.borderRadius = '8px';
+    toast.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+    toast.style.fontFamily = 'var(--fuente-lato)';
+    document.body.appendChild(toast);
 
-    const nuevoUsuario = {
-        nombre,
-        apellidos,
-        correo: campos.correo.value.trim(),
-        clave: campos.contrasena.value
-    };
-
-    fetch('../api/guardarUsuario.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(nuevoUsuario)
-    })
-        .then(res => res.json())
-        .then(respuesta => {
-            if (respuesta.ok) {
-                const toast = document.createElement('div');
-                toast.textContent = 'Registro exitoso. Redirigiendo...';
-                toast.style.position = 'fixed';
-                toast.style.bottom = '20px';
-                toast.style.right = '20px';
-                toast.style.padding = '1em 2em';
-                toast.style.backgroundColor = 'var(--color-principal)';
-                toast.style.color = '#fff';
-                toast.style.borderRadius = '8px';
-                toast.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
-                toast.style.fontFamily = 'var(--fuente-lato)';
-                document.body.appendChild(toast);
-
-                setTimeout(() => {
-                    toast.remove();
-                    window.location.href = 'login.php';
-                }, 2000);
-            } else {
-                const toastError = document.createElement('div');
-                toastError.textContent = respuesta.mensaje;
-                toastError.style.position = 'fixed';
-                toastError.style.bottom = '20px';
-                toastError.style.right = '20px';
-                toastError.style.padding = '1em 2em';
-                toastError.style.backgroundColor = 'var(--color-rojoError)';
-                toastError.style.color = '#fff';
-                toastError.style.borderRadius = '8px';
-                toastError.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
-                toastError.style.fontFamily = 'var(--fuente-lato)';
-                document.body.appendChild(toastError);
-
-                setTimeout(() => {
-                    toastError.remove();
-                }, 2000);
-            }
-        })
-        .catch(error => {
-            alert('Error al registrar. Intenta de nuevo más tarde.');
-            console.error('Error:', error);
-        });
+    setTimeout(() => {
+        toast.remove();
+        window.location.href = 'login.html';
+    }, 2000);
 });

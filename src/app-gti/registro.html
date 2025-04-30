@@ -9,16 +9,13 @@
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/registro.css">
-    <script src="js/menu.js" defer></script>
+    <script src="js/header.js" defer></script>
     <script src="js/registro.js" defer></script>
 </head>
 <body>
-<?php // PROVISIONAL SIN EL LOGIN
-$usuario = json_decode(file_get_contents("../api/data/usuarioActivo.json"));
-$logueado = $usuario && $usuario->logeado;
-$rutaBase = "./";
-include $logueado ? 'includes/headerLogueado.inc' : 'includes/headerNoLogueado.inc';
-?>
+
+<!-- Header - En el archivo js está el html en sí, según esté logueado se muestra uno y si no lo está otro. -->
+<div id="contenedor-header"></div>
 
 <section class="registro">
     <div class="contenedor-registro">
@@ -76,7 +73,7 @@ include $logueado ? 'includes/headerLogueado.inc' : 'includes/headerNoLogueado.i
             </div>
 
             <button type="submit" class="btn">Registrarse</button>
-            <p class="texto-secundario">¿Ya tienes cuenta? <a href="login.php" class="enlace-secundario">Iniciar sesión</a></p>
+            <p class="texto-secundario">¿Ya tienes cuenta? <a href="login.html" class="enlace-secundario">Iniciar sesión</a></p>
         </form>
     </div>
 </section>
