@@ -491,6 +491,22 @@ label {
 }
 /* endregion */
 
+/* region --- MENSAJES DE ERROR FORMULARIOS --- */
+.error-texto {
+    display: inline-block;
+    font-size: 0.85em;
+    color: var(--color-inputError);
+    margin-left: 0.5em;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    .error-texto {
+        font-size: 0.7em;
+    }
+}
+/* endregion */
+
 
 
 

@@ -1,3 +1,36 @@
+// Verificación de usuario al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    const usuario = JSON.parse(localStorage.getItem('usuario'));
+    if (!usuario) {
+        window.location.replace('../index.html'); // Redirigir si no está logueado
+    } else {
+        // Recuperamos el nombre completo del usuario (nombre y apellidos)
+        const nombreUsuario = `${usuario.nombre} ${usuario.apellidos}`;
+
+        // Actualizamos el nombre en el header (usuario-caja span)
+        const nombreElemento = document.querySelector('.usuario-caja span');
+        if (nombreElemento) {
+            nombreElemento.textContent = `Profesor ${nombreUsuario}`;
+        }
+
+        // Actualizamos el nombre en el popover
+        const nombrePopover = document.querySelector('#menu-usuario div strong');
+        if (nombrePopover) {
+            nombrePopover.textContent = nombreUsuario;  // Cambia el nombre dinámicamente en el popover
+        }
+    }
+});
+
+// Usamos 'pageshow' para manejar la restauración de la página desde la caché (botón "Atrás")
+window.addEventListener('pageshow', (event) => {
+    const usuario = JSON.parse(localStorage.getItem('usuario'));
+
+    // Si la página viene de la caché y no hay usuario logueado, recargamos la página
+    if (event.persisted && !usuario) {
+        window.location.replace('../index.html'); // Redirigir al login
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     const cerrarSesion = document.getElementById('cerrar-sesion');
     const popup = document.querySelector('.popup');

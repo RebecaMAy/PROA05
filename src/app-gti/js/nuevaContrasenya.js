@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     toast.remove();
                     window.location.href = 'login.html';
-                }, 2000);
+                }, 1000);
             });
         })
         .catch(error => {
