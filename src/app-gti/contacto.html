@@ -16,6 +16,7 @@
 
 <!-- Header - En el archivo js está el html en sí, según esté logueado se muestra uno y si no lo está otro. -->
 <div id="contenedor-header"></div>
+<!-- Cerramos sección header -->
 
 <!-- Formulario Contacto -->
 <section class="contacto">
@@ -25,59 +26,75 @@
             ¿Tienes alguna duda sobre nuestros productos o servicios? Escríbenos y te responderemos lo antes posible.
         </p>
 
+        <!-- Agrupación de todos los campos del formulario -->
         <div class="grupo-campos">
-            <div class="campo">
-                <label for="nombre">Nombres & Apellidos *</label>
-                <input type="text" id="nombre" class="input-base" placeholder="Tu nombre" />
-            </div>
 
-            <div class="campo">
-                <label for="email">Correo institucional *</label>
-                <input type="email" id="email" class="input-base" placeholder="correo@institucion.edu" />
-            </div>
-
-            <div class="campo">
-                <label for="institucion">Nombre de la institución *</label>
-                <input type="text" id="institucion" class="input-base" placeholder="Nombre de tu institución" />
-            </div>
-
-            <div class="campo">
-                <label for="tipo">Tipo de institución *</label>
-                <div class="input-dropdown">
-                    <select id="tipo" class="seleccionador-dropdown">
-                        <option selected disabled hidden>Selecciona tu institución</option>
-                        <option>Universidad</option>
-                        <option>Instituto</option>
-                        <option>Colegio</option>
-                        <option>Academia Particular</option>
-                        <option>Otros (especificar en campo mensaje)</option>
-                    </select>
-                    <img src="icons/dropdown.svg" alt="Flecha" class="icono-dropdown">
+            <!-- Fila 1: Nombre y apellidos -->
+            <div class="fila-doble">
+                <div class="campo">
+                    <label for="nombre">Nombre *</label>
+                    <input type="text" id="nombre" class="input-base" placeholder="Tu nombre" />
+                </div>
+                <div class="campo">
+                    <label for="apellidos">Apellidos *</label>
+                    <input type="text" id="apellidos" class="input-base" placeholder="Tus apellidos" />
                 </div>
             </div>
 
-            <div class="campo campo-largo">
-                <label for="producto">Por favor, selecciona el producto con el que tengas dudas *</label>
-                <div class="input-dropdown">
-                    <select id="producto" class="seleccionador-dropdown">
-                        <option selected disabled hidden>Selecciona un producto</option>
-                        <option>PROA</option>
-                    </select>
-                    <img src="icons/dropdown.svg" alt="Flecha" class="icono-dropdown">
+            <!-- Fila 2: Correo e institución -->
+            <div class="fila-doble">
+                <div class="campo">
+                    <label for="email">Correo institucional *</label>
+                    <input type="email" id="email" class="input-base" placeholder="correo@institucion.edu" />
+                </div>
+                <div class="campo">
+                    <label for="institucion">Nombre de la institución *</label>
+                    <input type="text" id="institucion" class="input-base" placeholder="Nombre de tu institución" />
                 </div>
             </div>
 
+            <!-- Fila 3: Tipo de institución y producto -->
+            <div class="fila-doble">
+                <div class="campo">
+                    <label for="tipo">Tipo de institución *</label>
+                    <div class="input-dropdown">
+                        <select id="tipo" class="seleccionador-dropdown">
+                            <option selected disabled hidden>Selecciona tu institución</option>
+                            <option>Universidad</option>
+                            <option>Instituto</option>
+                            <option>Colegio</option>
+                            <option>Academia Particular</option>
+                            <option>Otros (especificar en campo mensaje)</option>
+                        </select>
+                        <img src="icons/dropdown.svg" alt="Flecha" class="icono-dropdown">
+                    </div>
+                </div>
+                <div class="campo">
+                    <label for="producto">Producto con el que tienes dudas *</label>
+                    <div class="input-dropdown">
+                        <select id="producto" class="seleccionador-dropdown">
+                            <option selected disabled hidden>Selecciona un producto</option>
+                            <option>PROA</option>
+                        </select>
+                        <img src="icons/dropdown.svg" alt="Flecha" class="icono-dropdown">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mensaje -->
             <div class="campo campo-largo">
                 <label for="mensaje">Mensaje *</label>
                 <textarea id="mensaje" class="input-contacto" placeholder="Escribe aquí tu duda" rows="6"></textarea>
             </div>
         </div>
 
+        <!-- Botón para enviar el formulario -->
         <div class="boton-contacto">
             <button type="submit" class="btn">Enviar</button>
         </div>
     </form>
 </section>
+<!-- Fin de la sección del formulario de contacto -->
 
 </body>
 </html>

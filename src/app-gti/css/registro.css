@@ -84,6 +84,19 @@
     text-decoration: underline;
 }
 
+.campo-doble {
+    display: flex;
+    gap: 1em;
+    width: 100%;
+}
+
+.campo-doble .mitad {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
 @media (max-width: 1056px) {
     .contenedor-registro {
         flex-direction: column;
@@ -110,6 +123,10 @@
     .texto-secundario,
     .enlace-secundario {
         font-size: 1em; /
+    }
+
+    .campo-doble {
+        flex-direction: column;
     }
 }
 

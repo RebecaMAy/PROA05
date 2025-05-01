@@ -20,19 +20,27 @@
 
 .grupo-campos {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 2em;
     margin-top: 1em;
 }
 
-.campo {
-    flex: 1 1 45%;
+.fila-doble {
+    display: flex;
+    gap: 2em;
+    width: 100%;
+}
+
+.fila-doble .campo {
+    flex: 1 1 50%;
     display: flex;
     flex-direction: column;
 }
 
 .campo-largo {
     flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .boton-contacto {
@@ -49,18 +57,23 @@
         padding: 3em 2em;
     }
 
-    .campo,
+    .fila-doble {
+        flex-direction: column;
+    }
+
+    .fila-doble .campo {
+        flex: 1 1 100%;
+    }
+
     .campo-largo {
         flex: 1 1 100%;
     }
 
     .boton-contacto {
         justify-content: center;
-
     }
 
     .btn {
         width: 100%;
     }
-
 }

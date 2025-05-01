@@ -1,17 +1,21 @@
 document.querySelector('.formulario-login')?.addEventListener('submit', function (e) {
-    e.preventDefault();
+    e.preventDefault(); // Prevenimos el envío del formulario (recarga de la página)
 
+    // Obtenemos los campos del formulario
     const correoInput = document.getElementById('correo');
     const contrasenaInput = document.getElementById('contrasena');
 
+    // Obtenemos y limpiamos los valores ingresados por el usuario
     const correo = correoInput.value.trim();
     const contrasena = contrasenaInput.value;
 
+    // Expresión regular para validar formato de correo electrónico
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Eliminar errores previos
+    // Eliminamos mensajes de error previos (si los hay)
     document.querySelectorAll('label small').forEach(el => el.remove());
 
+    // Función para mostrar errores debajo de un label
     function mostrarError(campo, mensaje) {
         const label = document.querySelector(`label[for="${campo.id}"]`);
         const small = document.createElement('small');
@@ -22,25 +26,34 @@ document.querySelector('.formulario-login')?.addEventListener('submit', function
 
     let valido = true;
 
+    // Validamos formato del correo electrónico
     if (!emailRegex.test(correo)) {
         mostrarError(correoInput, 'Correo inválido');
         valido = false;
     }
 
+    // Si hay errores, no continuamos con la petición
     if (!valido) return;
 
-    // Solo permitir a los últimos 3 usuarios (usuarios GTI)
+    // Autenticación (login simulado)
+
+    // Cargamos los usuarios desde el archivo JSON
     fetch('../api/data/usuarios.json')
         .then(res => res.json())
         .then(usuarios => {
-            const ultimosUsuarios = usuarios.slice(-3); // Solo los últimos 3
+            // Tomamos solo los últimos 3 usuarios del archivo (los de GTI)
+            const ultimosUsuarios = usuarios.slice(-3);
+
+            // Buscamos un usuario que coincida con correo y contraseña
             const usuario = ultimosUsuarios.find(u =>
                 u.correo === correo && u.clave === contrasena
             );
 
             if (usuario) {
+                // Si se encuentra el usuario, lo guardamos en localStorage
                 localStorage.setItem('usuario', JSON.stringify(usuario));
 
+                // Mostramos mensaje de éxito tipo "toast"
                 const toast = document.createElement('div');
                 toast.textContent = 'Inicio de sesión exitoso. Redirigiendo...';
                 toast.style.position = 'fixed';
@@ -54,11 +67,14 @@ document.querySelector('.formulario-login')?.addEventListener('submit', function
                 toast.style.fontFamily = 'var(--fuente-lato)';
                 document.body.appendChild(toast);
 
+                // Esperamos 2 segundos, quitamos el toast y redirigimos al inicio
                 setTimeout(() => {
                     toast.remove();
                     window.location.href = '../index.html';
                 }, 2000);
+
             } else {
+                // Si no se encuentra el usuario, mostramos error tipo toast
                 const toastError = document.createElement('div');
                 toastError.textContent = 'Usuario o contraseña incorrectos';
                 toastError.style.position = 'fixed';
@@ -78,6 +94,7 @@ document.querySelector('.formulario-login')?.addEventListener('submit', function
             }
         })
         .catch(error => {
+            // Si ocurre un error en la petición, mostramos alerta genérica
             alert('Error al iniciar sesión. Intenta de nuevo más tarde.');
             console.error('Error:', error);
         });

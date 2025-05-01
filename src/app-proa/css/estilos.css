@@ -192,14 +192,53 @@ label {
 }
 
 .btn-secundario:hover {
-    color: white; /* Texto en blanco */
+    color: white;
     background-color: var(--color-primario);
     border-color: var(--color-primario);
 }
 
+/* Botones oscuros (sin invertir colores) */
+.btn-oscuros {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-primario);
+    font-size: 1.125em;
+    font-weight: 400;
+    color: white;
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: filter 0.2s ease-in-out;
+}
+
+.btn-oscuros:hover,
+.btn-oscuros:focus {
+    filter: brightness(0.9);
+}
+
+.btn-oscuros-secundario {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-panelesBlancoPuro);
+    font-size: 1.125em;
+    font-weight: 400;
+    color: var(--color-primario);
+    padding: 0.75em 1.5em;
+    border: 2px solid var(--color-primario);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: filter 0.2s ease-in-out;
+}
+
+.btn-oscuros-secundario:hover,
+.btn-oscuros-secundario:focus {
+    filter: brightness(0.95);
+}
+
 @media (max-width: 768px) {
     .btn,
-    .btn-secundario {
+    .btn-secundario,
+    .btn-oscuros,
+    .btn-oscuros-secundario {
         font-size: 1em;
         padding: 0.5em 1em;
         border-radius: 8px;

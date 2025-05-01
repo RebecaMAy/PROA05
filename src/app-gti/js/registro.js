@@ -1,11 +1,13 @@
 document.querySelector('.registro-formulario')?.addEventListener('submit', function (e) {
-    e.preventDefault();
+    e.preventDefault(); // Evitamos que el formulario se envíe y recargue la página
 
     const formulario = this;
     let formularioValido = true;
 
+    // Seleccionamos todos los campos relevantes del formulario
     const campos = {
         nombre: formulario.querySelector('#nombre'),
+        apellidos: formulario.querySelector('#apellidos'),
         institucion: formulario.querySelector('#institucion'),
         correo: formulario.querySelector('#correo'),
         tipo: formulario.querySelector('#tipo'),
@@ -14,13 +16,15 @@ document.querySelector('.registro-formulario')?.addEventListener('submit', funct
         repetir: formulario.querySelector('#repetir'),
     };
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const passRegex = /^(?=.*[\d!@#$%^&*(),.?":{}|<>]).{6,}$/;
-    const telRegex = /^\d+$/;
+    // Expresiones regulares para validaciones
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Validación de email básico
+    const passRegex = /^(?=.*[\d!@#$%^&*(),.?":{}|<>]).{6,}$/; // Mínimo 6 caracteres con número o símbolo
+    const telRegex = /^\d+$/; // Solo dígitos para el teléfono
 
-    // Eliminar mensajes de error anteriores
+    // Limpiamos mensajes de error anteriores
     formulario.querySelectorAll('label small').forEach(el => el.remove());
 
+    // Función para mostrar errores debajo del label correspondiente
     function mostrarError(campo, mensaje) {
         const label = formulario.querySelector(`label[for="${campo.id}"]`);
         if (label) {
@@ -29,15 +33,16 @@ document.querySelector('.registro-formulario')?.addEventListener('submit', funct
             small.classList.add('error-texto');
             label.appendChild(small);
         }
-        formularioValido = false;
+        formularioValido = false; // Marcamos el formulario como inválido
     }
 
-    // Validaciones individuales
-    const nombreValor = campos.nombre.value.trim();
-    if (nombreValor === '') {
+    // Validaciones campo por campo
+    if (campos.nombre.value.trim() === '') {
         mostrarError(campos.nombre, 'Campo obligatorio');
-    } else if (!nombreValor.includes(' ') || nombreValor.split(' ').filter(p => p).length < 2) {
-        mostrarError(campos.nombre, 'Debe incluir nombre y apellidos');
+    }
+
+    if (campos.apellidos.value.trim() === '') {
+        mostrarError(campos.apellidos, 'Campo obligatorio');
     }
 
     if (campos.institucion.value.trim() === '') {
@@ -70,9 +75,12 @@ document.querySelector('.registro-formulario')?.addEventListener('submit', funct
         mostrarError(campos.repetir, 'Las contraseñas no coinciden');
     }
 
+    // Si el formulario no pasa las validaciones, no continuamos
     if (!formularioValido) return;
 
-    // Simulación de registro exitoso (sin guardar en JSON ni llamar a PHP)
+    // Simulación de registro exitoso
+
+    // Creamos y mostramos un mensaje tipo "toast" de éxito
     const toast = document.createElement('div');
     toast.textContent = 'Registro exitoso. Redirigiendo...';
     toast.style.position = 'fixed';

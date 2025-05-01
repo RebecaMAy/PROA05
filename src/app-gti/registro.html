@@ -16,9 +16,13 @@
 
 <!-- Header - En el archivo js está el html en sí, según esté logueado se muestra uno y si no lo está otro. -->
 <div id="contenedor-header"></div>
+<!-- Cerramos sección header -->
 
+<!-- Sección principal de registro -->
 <section class="registro">
     <div class="contenedor-registro">
+
+        <!-- Texto explicativo que acompaña el formulario -->
         <div class="registro-texto">
             <h2>Regístrate y empieza a probar la demo de nuestros módulos educativos</h2>
             <p class="parrafo-principal">
@@ -26,17 +30,28 @@
             </p>
         </div>
 
+        <!-- Formulario para el registro de usuarios -->
         <form class="registro-formulario">
-            <div class="campo">
-                <label for="nombre">Nombres & Apellidos *</label>
-                <input type="text" id="nombre" class="input-base" />
+
+            <!-- Campos para el nombre y apellidos del usuario -->
+            <div class="campo-doble">
+                <div class="campo mitad">
+                    <label for="nombre">Nombre *</label>
+                    <input type="text" id="nombre" class="input-base" />
+                </div>
+                <div class="campo mitad">
+                    <label for="apellidos">Apellidos *</label>
+                    <input type="text" id="apellidos" class="input-base" />
+                </div>
             </div>
 
+            <!-- Campo para el nombre de la institución -->
             <div class="campo">
                 <label for="institucion">Nombre de la institución *</label>
                 <input type="text" id="institucion" class="input-base" />
             </div>
 
+            <!-- Selección del tipo de institución -->
             <div class="campo">
                 <label for="tipo">Tipo de institución *</label>
                 <div class="input-dropdown">
@@ -48,35 +63,46 @@
                         <option>Academia Particular</option>
                         <option>Otros</option>
                     </select>
+                    <!-- Icono decorativo para dropdown personalizado -->
                     <img src="icons/dropdown.svg" alt="Flecha" class="icono-dropdown" />
                 </div>
             </div>
 
+            <!-- Campo para el número de teléfono -->
             <div class="campo">
                 <label for="telefono">Teléfono *</label>
                 <input type="tel" id="telefono" class="input-base" />
             </div>
 
+            <!-- Campo para el correo institucional -->
             <div class="campo">
                 <label for="correo">Correo de la institución *</label>
                 <input type="email" id="correo" class="input-base" />
             </div>
 
+            <!-- Campo para la contraseña del usuario -->
             <div class="campo">
                 <label for="contrasena">Contraseña *</label>
                 <input type="password" id="contrasena" class="input-base" />
             </div>
 
+            <!-- Campo para confirmar la contraseña -->
             <div class="campo">
                 <label for="repetir">Repetir contraseña *</label>
                 <input type="password" id="repetir" class="input-base" />
             </div>
 
+            <!-- Botón para enviar el formulario -->
             <button type="submit" class="btn">Registrarse</button>
-            <p class="texto-secundario">¿Ya tienes cuenta? <a href="login.html" class="enlace-secundario">Iniciar sesión</a></p>
+
+            <!-- Enlace para usuarios que ya tienen cuenta -->
+            <p class="texto-secundario">
+                ¿Ya tienes cuenta? <a href="login.html" class="enlace-secundario">Iniciar sesión</a>
+            </p>
         </form>
     </div>
 </section>
+<!-- Fin de la sección del formulario de registro -->
 
 </body>
 </html>
