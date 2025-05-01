@@ -56,7 +56,6 @@ a { color: inherit; }
     --color-bordes: #CCCCCC;
     --color-fondoPROAGris: #F9FAFB;
     --color-panelesBlancoPuro: #FFFFFF;
-    --color-inputsSeleccionados: #6b6b6b;
 
     /* Tipografía */
     --fuente-principal: 'Lato', sans-serif;
@@ -162,10 +161,6 @@ label {
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-}
-
-.btn:active {
-    transform: scale(0.98);
 }
 
 .btn:hover {
@@ -277,7 +272,7 @@ label {
 }
 
 .input-base:focus {
-    border-color: var(--color-inputsSeleccionados);
+    border-color: var(--color-primario);
     outline: none;
 }
 /* endregion */
@@ -493,6 +488,22 @@ label {
     height: 40px;
     margin-bottom: 0.5em;
     object-fit: contain;
+}
+/* endregion */
+
+/* region --- MENSAJES DE ERROR FORMULARIOS --- */
+.error-texto {
+    display: inline-block;
+    font-size: 0.85em;
+    color: var(--color-inputError);
+    margin-left: 0.5em;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    .error-texto {
+        font-size: 0.7em;
+    }
 }
 /* endregion */
 

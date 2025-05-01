@@ -45,7 +45,7 @@ document.querySelector('.formulario-login')?.addEventListener('submit', function
                 setTimeout(() => {
                     toast.remove();
                     window.location.href = `nuevaContrasenya.html?email=${encodeURIComponent(correo)}`;
-                }, 2000);
+                }, 1000);
             } else {
                 mostrarError(correoInput, 'Correo no encontrado');
             }
