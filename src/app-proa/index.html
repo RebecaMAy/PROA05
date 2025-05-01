@@ -6,14 +6,37 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login PROA</title>
-    <link rel="stylesheet" href="../css/estilos.css">
-    <link rel="stylesheet" href="css/estilo.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="js/menu.js">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
 
-<h2>Login de PROA</h2>
+<!-- Contenedor login PROA -->
+<div class="contenedor-login">
+    <div class="panel-login">
+        <!-- Logo de PROA -->
+        <img src="icons/logoAzul.svg" alt="Logo PROA" class="logo-login">
+
+        <h2>Introduce tus credenciales</h2>
+
+        <!-- Formulario login PROA -->
+        <form>
+            <!-- Correo -->
+            <label for="correo">Correo</label>
+            <input type="email" id="correo" class="input-base" placeholder="Correo">
+
+            <!-- Contraseña -->
+            <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena" class="input-base" placeholder="Contraseña">
+
+            <!-- Botón entrar -->
+            <button type="submit" class="btn">Entrar a la Demo</button>
+
+        </form>
+        <!-- Fin formulario login PROA -->
+    </div>
+</div>
+<!-- Fin contenedor login PROA -->
 
 </body>
 </html>
