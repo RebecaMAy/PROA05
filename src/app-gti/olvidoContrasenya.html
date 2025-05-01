@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recuperar Contraseña</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/header.js" defer></script>
+    <script src="js/olvidoContrasenya.js" defer></script>
+</head>
+<body>
+
+<!-- Header - En el archivo js está el html en sí, según esté logueado se muestra uno y si no lo está otro. -->
+<div id="contenedor-header"></div>
+<!-- Cerramos sección header -->
+
+<!-- Formulario de recuperar contraseña -->
+<section class="login">
+    <form class="formulario-login">
+        <h2>Recuperar contraseña</h2>
+
+        <p class="parrafo-terciario">
+            Ingresa tu correo institucional y te guiaremos para cambiar tu contraseña.
+        </p>
+
+        <div class="campo">
+            <label for="correo">Correo de la institución *</label>
+            <input type="email" id="correo" class="input-base" required>
+        </div>
+
+        <button type="submit" class="btn">Enviar enlace de recuperación</button>
+
+        <p class="texto-secundario">
+            ¿Ya recuerdas tu contraseña?
+            <a href="login.html" class="enlace-secundario">Iniciar sesión</a>
+        </p>
+    </form>
+</section>
+<!-- Fin de la sección de recuperar contraseña -->
+
+</body>
+</html>

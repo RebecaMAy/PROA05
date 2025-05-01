@@ -97,6 +97,19 @@
     gap: 0.5em;
 }
 
+.fila-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.indicacion-contrasena {
+    font-size: 0.9rem;
+    color: var(--color-textos);
+    margin-left: 1em;
+}
+
 @media (max-width: 1056px) {
     .contenedor-registro {
         flex-direction: column;
@@ -127,6 +140,11 @@
 
     .campo-doble {
         flex-direction: column;
+    }
+
+    .indicacion-contrasena {
+        font-size: 0.75rem;
+        margin-left: 0;
     }
 }
 

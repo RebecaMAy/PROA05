@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cambiar Contraseña</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/header.js" defer></script>
+    <script src="js/nuevaContrasenya.js" defer></script>
+</head>
+<body>
+
+<!-- Header - En el archivo js está el html en sí, según esté logueado se muestra uno y si no lo está otro. -->
+<div id="contenedor-header"></div>
+<!-- Cerramos sección header -->
+
+<!-- Formulario de cambiar contraseña -->
+<section class="login">
+    <form class="formulario-login">
+        <h2>Establecer nueva contraseña</h2>
+
+        <p class="parrafo-terciario">
+            Para proteger tu cuenta, elige una nueva contraseña que no hayas utilizado antes. Debe contener al menos 6 caracteres e incluir números o símbolos. Memorízala o guárdala de forma segura.
+        </p>
+
+        <div class="campo">
+            <label for="nueva">Nueva contraseña *</label>
+            <input type="password" id="nueva" class="input-base" required>
+        </div>
+
+        <div class="campo">
+            <label for="confirmar">Confirmar contraseña *</label>
+            <input type="password" id="confirmar" class="input-base" required>
+        </div>
+
+        <button type="submit" class="btn">Guardar nueva contraseña</button>
+
+        <p class="texto-secundario">
+            ¿No era tu cuenta?
+            <a href="login.html" class="enlace-secundario">Volver al login</a>
+        </p>
+    </form>
+</section>
+<!-- Fin de la sección de cambiar contraseña -->
+
+
+</body>
+</html>
