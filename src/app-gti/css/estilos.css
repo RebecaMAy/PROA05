@@ -200,7 +200,7 @@ label {
 .btnCTA {
     font-family: var(--fuente-lato);
     background-color: var(--color-principal);
-    font-size: 1.5em;
+    font-size: 1.4em;
     font-weight: 400;
     color: var(--color-blancoPuro);
     padding: 1.25em 1.25em;
@@ -223,7 +223,7 @@ label {
 .btn {
     font-family: var(--fuente-lato);
     background-color: var(--color-principal);
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-weight: 400;
     color: var(--color-blancoPuro);
     padding: 0.65em 0.75em;
@@ -264,7 +264,7 @@ label {
 .btnCTA-PROA {
     font-family: var(--fuente-lato);
     background-color: var(--color-PROA);
-    font-size: 1.5em;
+    font-size: 1.4em;
     font-weight: 400;
     color: var(--color-blancoPuro);
     padding: 0.75em 1.75em;
@@ -288,7 +288,7 @@ label {
 .btnPROA {
     font-family: var(--fuente-lato);
     background-color: var(--color-PROA);
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-weight: 400;
     color: var(--color-blancoPuro);
     padding: 0.75em 2em;
@@ -302,7 +302,6 @@ label {
     transform: scale(0.98);
 }
 
-
 .btnPROA:hover {
     background-color: var(--color-blancoPuro);
     color: var(--color-PROA);
@@ -312,7 +311,7 @@ label {
 .btnPROA-secundario {
     font-family: var(--fuente-lato);
     background-color: var(--color-blancoPuro);
-    font-size: 1.25em;
+    font-size: 1.2em;
     font-weight: 400;
     color: var(--color-PROA);
     padding: 0.75em 0.75em;
@@ -401,7 +400,7 @@ label {
 .popup-botones .btn {
     width: 100%;
     padding: 0.7em;
-    font-size: 1.15em;
+    font-size: 1.2em;
     border-radius: 12px;
 }
 
