@@ -33,18 +33,6 @@
     width: 100%;
 }
 
-.enlace-secundario {
-    color: var(--color-principal);
-    text-decoration: none;
-    font-family: var(--fuente-lato);
-    font-weight: 500;
-    font-size: 1.125em;
-}
-
-.enlace-secundario:hover {
-    text-decoration: underline;
-}
-
 .formulario-login .btn {
     width: 100%;
 }
@@ -53,8 +41,21 @@
     text-align: center;
     font-family: var(--fuente-lato);
     font-weight: 400;
-    font-size: 1.125em;
+    font-size: 1.1em;
     margin-top: -0.5em;
+}
+
+.enlace-secundario {
+    color: var(--color-principal);
+    text-decoration: none;
+    margin-left: 0.5em;
+    font-family: var(--fuente-lato);
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.enlace-secundario:hover {
+    text-decoration: underline;
 }
 
 @media (max-width: 480px) {

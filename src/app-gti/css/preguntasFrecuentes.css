@@ -26,7 +26,7 @@
     background: var(--color-blancoPuro);
     width: 100%;
     padding: 1.25em;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: 700;
     border: none;
     cursor: pointer;
@@ -61,8 +61,12 @@
     max-height: 300px;
 }
 
+.parrafo-principal {
+    font-size: 1.2em;
+}
+
 @media (max-width: 480px) {
     .faq-pregunta {
-        font-size: 1.125em;
+        font-size: 0.9em;
     }
 }

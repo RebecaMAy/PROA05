@@ -91,7 +91,7 @@ document.querySelector('.formulario-login')?.addEventListener('submit', function
                 setTimeout(() => {
                     toast.remove();
                     window.location.href = '../index.html';
-                }, 1000);
+                }, 1500);
 
             } else {
                 // Si no se encuentra el usuario, mostramos error tipo toast
@@ -110,7 +110,7 @@ document.querySelector('.formulario-login')?.addEventListener('submit', function
 
                 setTimeout(() => {
                     toastError.remove();
-                }, 1000);
+                }, 1500);
             }
         })
         .catch(error => {

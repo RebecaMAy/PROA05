@@ -1,10 +1,15 @@
+.contacto {
+    min-height: calc(100dvh - 80px);
+}
+
+
 .formulario-contacto {
     max-width: 1100px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 1em;
-    padding: 4em 3em;
+    padding: 2em 3em;
 }
 
 .formulario-contacto h2,
@@ -15,13 +20,13 @@
 }
 
 .formulario-contacto label {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.4em;
 }
 
 .grupo-campos {
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    gap: 1.1em;
     margin-top: 1em;
 }
 

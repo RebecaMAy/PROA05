@@ -97,5 +97,5 @@ document.querySelector('.registro-formulario')?.addEventListener('submit', funct
     setTimeout(() => {
         toast.remove();
         window.location.href = 'login.html';
-    }, 1000);
+    }, 1500);
 });

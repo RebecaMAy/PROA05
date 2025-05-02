@@ -85,5 +85,5 @@ document.querySelector('.formulario-contacto')?.addEventListener('submit', funct
     setTimeout(() => {
         toast.remove();
         formulario.reset(); // Limpiamos todos los campos del formulario
-    }, 1000);
+    }, 1500);
 });

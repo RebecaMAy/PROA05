@@ -13,7 +13,7 @@ body {
     background-color: var(--color-panelesBlancoPuro);
     margin: 1em;
     padding-top: 0;
-    padding-bottom: 2.5em;
+    padding-bottom: 3.5em;
     padding-right: 2.5em;
     padding-left: 2.5em;
     border-radius: 10px;
@@ -28,6 +28,7 @@ body {
 
 .logo-login {
     width: 280px;
+    height: 230px;
 }
 
 h2 {

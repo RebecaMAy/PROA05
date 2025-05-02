@@ -45,57 +45,57 @@
                 </div>
             </div>
 
-            <!-- Campo para el nombre de la institución -->
-            <div class="campo">
-                <label for="institucion">Nombre de la institución *</label>
-                <input type="text" id="institucion" class="input-base" />
-            </div>
-
-            <!-- Selección del tipo de institución -->
-            <div class="campo">
-                <label for="tipo">Tipo de institución *</label>
-                <div class="input-dropdown">
-                    <select id="tipo" class="seleccionador-dropdown">
-                        <option selected disabled hidden>Selecciona tu institución</option>
-                        <option>Universidad</option>
-                        <option>Instituto</option>
-                        <option>Colegio</option>
-                        <option>Academia Particular</option>
-                        <option>Otros</option>
-                    </select>
-                    <!-- Icono decorativo para dropdown personalizado -->
-                    <img src="icons/dropdown.svg" alt="Flecha" class="icono-dropdown" />
+            <!-- Campo doble para institución y tipo -->
+            <div class="campo-doble">
+                <div class="campo mitad">
+                    <label for="institucion">Nombre de la institución *</label>
+                    <input type="text" id="institucion" class="input-base" />
+                </div>
+                <div class="campo mitad">
+                    <label for="tipo">Tipo de institución *</label>
+                    <div class="input-dropdown">
+                        <select id="tipo" class="seleccionador-dropdown">
+                            <option selected disabled hidden>Selecciona tu institución</option>
+                            <option>Universidad</option>
+                            <option>Instituto</option>
+                            <option>Colegio</option>
+                            <option>Academia Particular</option>
+                            <option>Otros</option>
+                        </select>
+                        <img src="icons/dropdown.svg" alt="Flecha" class="icono-dropdown" />
+                    </div>
                 </div>
             </div>
 
-            <!-- Campo para el número de teléfono -->
-            <div class="campo">
-                <label for="telefono">Teléfono *</label>
-                <input type="tel" id="telefono" class="input-base" />
-            </div>
-
-            <!-- Campo para el correo institucional -->
-            <div class="campo">
-                <label for="correo">Correo de la institución *</label>
-                <input type="email" id="correo" class="input-base" />
-            </div>
-
-            <!-- Campo para la contraseña del usuario -->
-            <div class="campo">
-                <div class="fila-label">
-                    <label for="contrasena">Contraseña *</label>
-                    <span class="indicacion-contrasena">
-            Debe contener al menos 6 caracteres e incluir números o símbolos.
-        </span>
+            <!-- Campo doble para teléfono y correo -->
+            <div class="campo-doble">
+                <div class="campo mitad">
+                    <label for="telefono">Teléfono *</label>
+                    <input type="tel" id="telefono" class="input-base" />
                 </div>
-                <input type="password" id="contrasena" class="input-base" />
+                <div class="campo mitad">
+                    <label for="correo">Correo de la institución *</label>
+                    <input type="email" id="correo" class="input-base" />
+                </div>
             </div>
 
-            <!-- Campo para confirmar la contraseña -->
-            <div class="campo">
-                <label for="repetir">Repetir contraseña *</label>
-                <input type="password" id="repetir" class="input-base" />
+            <!-- Campo doble para contraseña y repetir contraseña -->
+            <div class="campo-doble">
+                <div class="campo mitad">
+                    <div class="fila-label">
+                        <label for="contrasena">Contraseña *</label>
+                    </div>
+                    <input type="password" id="contrasena" class="input-base" />
+                </div>
+                <div class="campo mitad">
+                    <label for="repetir">Repetir contraseña *</label>
+                    <input type="password" id="repetir" class="input-base" />
+                </div>
             </div>
+            <span class="indicacion-contrasena">
+                La contraseña debe contener al menos 6 caracteres e incluir números o símbolos.
+            </span>
+
 
             <!-- Botón para enviar el formulario -->
             <button type="submit" class="btn">Registrarse</button>

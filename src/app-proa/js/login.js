@@ -105,7 +105,7 @@ document.querySelector('.formulario-login')?.addEventListener('submit', function
 
                 setTimeout(() => {
                     toastError.remove();
-                }, 1000);
+                }, 2000);
             }
         })
         .catch(error => {
