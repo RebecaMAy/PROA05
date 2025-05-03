@@ -1,0 +1,391 @@
+.contenido-principal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    padding: 2em;
+    align-items: flex-start;
+}
+
+/* TÍTULOS CON ICONOS */
+.titulo-con-icono {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-bottom: 1.5em;
+}
+
+.icono-inicio {
+    width: 1.3em;
+    height: 1.3em;
+}
+
+/* PANEL IZQUIERDO */
+.panel-asignaturas {
+    flex: 3;
+    min-width: 300px;
+    padding: 2em;
+    border: none;
+}
+
+.bloque-cabecera-asignaturas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: 2em;
+    margin-bottom: 1em;
+}
+
+/* FILTROS */
+.filtros-asignaturas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    flex: 1;
+}
+
+.input-base {
+    width: 100%;
+    height: 100%;
+    padding: 0.75em 1em;
+    font-size: 1em;
+    font-family: var(--fuente-principal);
+    border: 1px solid var(--color-bordes);
+    border-radius: 5px;
+    background-color: var(--color-panelesBlancoPuro);
+}
+
+.filtros-asignaturas > .input-con-icono,
+.filtros-asignaturas > .boton-favoritas {
+    flex: 1 1 250px;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* BOTÓN FAVORITAS */
+.boton-favoritas {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.75em 1em;
+    font-size: 1em;
+    font-family: var(--fuente-principal);
+    background-color: var(--color-panelesBlancoPuro);
+    color: var(--color-primario);
+    border: 1px solid var(--color-bordes);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.boton-favoritas:hover {
+    background-color: var(--color-terciario);
+}
+
+.boton-favoritas.activo {
+    background-color: var(--color-primario);
+    color: white;
+    border-color: var(--color-primario);
+}
+.boton-favoritas.activo svg,
+.boton-favoritas.activo img {
+    filter: brightness(0) invert(1); /* vuelve el icono blanco */
+}
+
+
+/* INPUTS Y DROPDOWNS */
+.input-con-icono {
+    position: relative;
+    width: 100%;
+}
+
+.input-textoBusqueda {
+    padding-left: 2.5em;
+}
+
+.seleccionador-dropdown {
+    width: 100%;
+    padding: 0.75em 2.5em 0.75em 1em;
+    font-weight: 500;
+    color: #000;
+    appearance: none;
+    border: 1px solid var(--color-bordes);
+    border-radius: 5px;
+    background-color: var(--color-panelesBlancoPuro);
+    font-family: var(--fuente-principal);
+}
+
+.icono-buscador,
+.icono-dropdown {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1em;
+    height: 1em;
+    pointer-events: none;
+    color: var(--color-primario);
+}
+
+.icono-buscador {
+    left: 0.75em;
+}
+
+.icono-dropdown {
+    right: 0.75em;
+}
+
+/* LISTADO DE ASIGNATURAS */
+.lista-asignaturas {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.item-asignatura {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-panelesBlancoPuro);
+    border: none;
+    border-radius: 8px;
+    padding: 1em;
+    transition: box-shadow 0.2s;
+}
+
+.item-asignatura:hover {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.asignatura-izquierda {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.asignatura-izquierda h4 {
+    font-size: 1.125em;
+    color: var(--color-resalteOscuro);
+}
+
+.asignatura-izquierda p {
+    font-size: 0.875em;
+    color: #888;
+}
+
+.asignatura-izquierda img {
+    width: 32px;
+    height: 32px;
+}
+
+.asignatura-derecha {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.asignatura-derecha img:last-child {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+/* PANEL NOTIFICACIONES */
+.panel-notificaciones {
+    display: flex;
+    flex-direction: column;
+    min-width: 280px;
+    padding: 2em;
+    border: none;
+    border-radius: 8px;
+    align-self: flex-start;
+    margin-top: 3.7em;
+}
+
+.subtitulo-panel {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+/* TARJETAS DE NOTIFICACIONES */
+.lista-notificaciones {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    list-style: none;
+}
+
+.notificacion-item {
+    background-color: var(--color-panelesBlancoPuro);
+    border-bottom: 1px solid var(--color-bordes);
+    padding: 1em;
+}
+
+.notificacion-item p {
+    color: var(--color-resalteOscuro);
+    font-weight: 600;
+    margin-bottom: 0.25em;
+}
+
+.notificacion-item small {
+    color: #888;
+    font-size: 0.875em;
+}
+/* Pantallas de 900px de ancho */
+@media (max-width: 1040px) {
+    .contenido-principal {
+        flex-direction: column;
+        gap: 1.5em;
+        padding: 1.5em;
+    }
+
+    .panel-asignaturas {
+        flex: 1;
+        min-width: 100%;
+        padding: 1.5em;
+    }
+
+    /* Cambiar la dirección de los filtros para que estén en fila */
+    .filtros-asignaturas {
+        flex-direction: row; /* Cambiado a fila */
+        gap: 1em; /* Aseguramos un poco de espacio entre los filtros */
+        justify-content: space-between; /* Asegura que los filtros se distribuyan adecuadamente */
+    }
+
+    /* Asegurar que los filtros no se vean demasiado pequeños */
+    .filtros-asignaturas > .input-con-icono,
+    .filtros-asignaturas > .boton-favoritas {
+        flex: 1;
+        width: 30%; /* Ajusta el ancho para que no se vean tan pequeños y se distribuyan bien */
+    }
+
+    /* Ajustar las notificaciones */
+    .panel-notificaciones {
+        margin-top: 2em;
+        padding: 1.5em;
+        flex: 1;
+        width: 100%;
+    }
+
+    /* Ajustar el tamaño de los iconos */
+    .icono-buscador,
+    .icono-dropdown {
+        width: 1.5em;
+        height: 1.5em;
+    }
+
+    /* Ajustar tamaños de los textos */
+    .asignatura-izquierda h4 {
+        font-size: 1em;
+    }
+
+    .asignatura-izquierda p {
+        font-size: 0.9em;
+    }
+
+    /* Mejorar la presentación de la lista de asignaturas */
+    .item-asignatura {
+        padding: 1.2em;
+        margin-bottom: 1em;
+    }
+
+    .asignatura-izquierda {
+        gap: 1.5em;
+    }
+
+    .asignatura-derecha {
+        gap: 1.5em;
+    }
+}
+
+/* Pantallas de 768px de ancho */
+@media (max-width: 768px) {
+    .contenido-principal {
+        flex-direction: column;
+        padding: 1em;
+    }
+
+    /* Panel de asignaturas */
+    .panel-asignaturas {
+        flex: 1;
+        padding: 1em;
+        min-width: 100%;
+    }
+
+    /* Asegurarse que los filtros estén debajo de las asignaturas */
+    .filtros-asignaturas {
+        flex-direction: column; /* Apilar los filtros debajo */
+        gap: 1em;
+        margin-top: 1.5em; /* Separación de los filtros respecto a las asignaturas */
+        margin-bottom: 1.5em; /* Separación del resto de la página */
+    }
+
+    .filtros-asignaturas > .input-con-icono,
+    .filtros-asignaturas > .boton-favoritas {
+        flex: 1 1 100%; /* Asegurar que los filtros ocupen el 100% del ancho */
+        width: 100%; /* Aseguramos que ocupen todo el espacio disponible */
+        box-sizing: border-box;
+    }
+
+    .item-asignatura {
+        padding: 1em;
+        margin-bottom: 1em;
+        width: 100%;
+    }
+
+    /* Ajuste de iconos */
+    .icono-buscador,
+    .icono-dropdown {
+        width: 1.3em;
+        height: 1.3em;
+    }
+
+    .boton-favoritas {
+        padding: 0.75em;
+        font-size: 0.9em;
+    }
+
+    /* Otros ajustes visuales */
+    .asignatura-izquierda h4 {
+        font-size: 1.125em;
+    }
+
+    .asignatura-izquierda p {
+        font-size: 0.9em;
+        color: #888;
+    }
+}
+
+/* Pantallas más pequeñas (hasta 480px) */
+@media (max-width: 480px) {
+    .contenido-principal {
+        padding: 0.5em;
+    }
+
+    .panel-asignaturas {
+        padding: 0.5em;
+    }
+
+    .filtros-asignaturas {
+        gap: 0.5em;
+    }
+
+    .item-asignatura {
+        padding: 0.75em;
+    }
+
+    .panel-notificaciones {
+        padding: 1em;
+        width: 100%; /* Hacerlo más ancho */
+    }
+
+    .asignatura-izquierda h4 {
+        font-size: 1em;
+    }
+
+    .asignatura-izquierda p {
+        font-size: 0.8em;
+    }
+}
+

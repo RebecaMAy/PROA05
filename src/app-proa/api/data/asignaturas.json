@@ -1,0 +1,37 @@
+[
+  {
+    "codigo": "MAT101",
+    "nombre": "Álgebra Matricial",
+    "titular": "Kevan Pounds Mainston",
+    "colaboradores": ["Eolande Merriton Mizzi"],
+    "alumnos": ["Lief Simants Dredge", "Merline Kirdsch Kampshell"]
+  },
+  {
+    "codigo": "ECO201",
+    "nombre": "Economía de la Empresa",
+    "titular": "Luelle Pridmore Starsmeare",
+    "colaboradores": [],
+    "alumnos": ["Debora Rawstorne", "Merline Kirdsch Kampshell"]
+  },
+  {
+    "codigo": "SEG301",
+    "nombre": "Ciberseguridad",
+    "titular": "Eolande Merriton Mizzi",
+    "colaboradores": ["Kevan Pounds Mainston"],
+    "alumnos": ["Lief Simants Dredge", "Debora Rawstorne"]
+  },
+  {
+    "codigo": "PRO303",
+    "nombre": "Programación 3",
+    "titular": "Kevan Pounds Mainston",
+    "colaboradores": ["Luelle Pridmore Starsmeare"],
+    "alumnos": ["Debora Rawstorne"]
+  },
+  {
+    "codigo": "ALG201",
+    "nombre": "Algorítmica",
+    "titular": "Eolande Merriton Mizzi",
+    "colaboradores": [],
+    "alumnos": ["Lief Simants Dredge", "Merline Kirdsch Kampshell", "Debora Rawstorne"]
+  }
+]

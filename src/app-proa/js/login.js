@@ -1,13 +1,23 @@
 // Redirección inmediata si el usuario ya está logueado
 const usuarioLogueado = JSON.parse(localStorage.getItem('usuario'));
+
 if (usuarioLogueado) {
-    if (usuarioLogueado.rol === "alumno") {
-        window.location.replace('../app-proa/alumno/index.html');
-    } else if (usuarioLogueado.rol === "profesor") {
-        window.location.replace('../app-proa/profesor/index.html');
-    } else if (usuarioLogueado.rol === "pas") {
-        window.location.replace('../app-proa/pas/index.html');
-    }
+    fetch('api/data/usuarios.json')
+        .then(res => res.json())
+        .then(usuarios => {
+            const usuarioValido = usuarios.find(u =>
+                u.correo === usuarioLogueado.correo &&
+                (u.rol === "alumno" || u.rol === "profesor" || u.rol === "pas")
+            );
+
+            if (usuarioValido) {
+                if (usuarioValido.rol === "pas") {
+                    window.location.replace('../app-proa/pas/index.html');
+                } else {
+                    window.location.replace('../app-proa/menu-asignaturas.html');
+                }
+            }
+        });
 }
 
 // Lógica de login
@@ -81,14 +91,13 @@ document.querySelector('.formulario-login')?.addEventListener('submit', function
 
                 setTimeout(() => {
                     toast.remove();
-                    if (usuario.rol === "alumno") {
-                        window.location.href = '../app-proa/alumno/index.html';
-                    } else if (usuario.rol === "profesor") {
-                        window.location.href = '../app-proa/profesor/index.html';
-                    } else if (usuario.rol === "pas") {
+                    if (usuario.rol === "pas") {
                         window.location.href = '../app-proa/pas/index.html';
+                    } else {
+                        window.location.href = '../app-proa/menu-asignaturas.html';
                     }
                 }, 2000);
+
             } else {
                 const toastError = document.createElement('div');
                 toastError.textContent = 'Usuario o contraseña incorrectos';

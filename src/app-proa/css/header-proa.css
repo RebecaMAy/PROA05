@@ -1,0 +1,254 @@
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-primario);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-panelesBlancoPuro);
+    font-family: var(--fuente-principal);
+    font-size: 1.25em;
+    padding-left: 0;
+    padding-right: 1.5em;
+    z-index: 10; /* Se pondrá por encima de cualquier elemento con z-index menor */
+}
+
+.logo {
+    height: 80px;
+    width: auto;
+}
+
+.icono-notificacion {
+    height: 40px;
+    width: auto;
+    margin-right: 1em;
+    cursor: pointer;
+}
+
+.usuario-caja {
+    all: unset; /* Quita el estilo nativo del botón */
+    display: flex;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 0.4em 0.85em;
+    gap: 0.5em;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.usuario-caja .icono-usuario {
+    height: 33px;
+    width: 33px;
+}
+
+.header-izquierda {
+    display: flex;
+    justify-content: flex-start;
+    margin-top:0.3em;
+}
+
+.header-derecha {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* region --- MENU USUARIO POPOVER --- */
+.usuario-caja[popovertarget] {
+    anchor-name: --menu-usuario; /* Permite anclar el popover respecto a esta caja */
+    cursor: pointer;
+}
+
+/* Estilo del popover de usuario */
+#menu-usuario {
+    inset: unset;
+    position-anchor: --menu-usuario;
+    top: anchor(bottom); /* Aparece debajo del botón */
+    left: anchor(right); /* Alineado a la derecha */
+    margin-top: .3em;
+    position-try-fallbacks: --bottom-left;
+
+    background-color: var(--color-panelesBlancoPuro);
+    color: black;
+    font-family: var(--fuente-principal);
+    font-size: 1em;
+
+    padding: 1em;
+    max-width: 22ch;
+    border: none;
+    border-radius: .4em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Primer bloque: saludo y línea inferior */
+#menu-usuario div:first-child {
+    font-size: 0.9em;
+    padding-bottom: .5em;
+    margin-bottom: .5em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+}
+
+/* Enlaces del popover */
+#menu-usuario div {
+    padding: 0.4em 0;
+}
+
+#menu-usuario a {
+    text-decoration: none;
+    color: var(--color-primario);
+    transition: color 0.3s ease;
+}
+
+#menu-usuario a:hover {
+    color: var(--color-resalteOscuro);
+}
+
+#menu-usuario a:active {
+    transform: scale(0.97);
+}
+
+/* Fallback si no se puede colocar abajo a la derecha */
+@position-try --bottom-left {
+    inset: unset;
+    top: anchor(bottom);
+    right: anchor(right);
+}
+/* endregion */
+
+/* region --- AVISOS POPOVER --- */
+.boton-notificacion[popovertarget] {
+    anchor-name: --menu-avisos;
+    cursor: pointer;
+}
+
+/* --- BOTÓN DE NOTIFICACIÓN --- */
+.boton-notificacion {
+    all: unset;
+    cursor: pointer;
+}
+
+#menu-avisos {
+    inset: unset;
+    position-anchor: --menu-avisos;
+    top: anchor(bottom);
+    left: anchor(center);
+    margin-top: .6em;
+    transform: translateX(-50%);
+
+    background-color: var(--color-panelesBlancoPuro);
+    color: black;
+    font-family: var(--fuente-principal);
+    font-size: 0.95em;
+
+    padding: 1em;
+    min-width: 250px;
+    max-width: 300px;
+    border: none;
+    border-radius: .4em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Estilo de cada aviso */
+.aviso-item {
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.aviso-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* Estilo de fecha */
+.fecha-aviso {
+    font-size: 0.8em;
+    color: grey;
+    margin-top: 0.2em;
+}
+
+/* Fallback para posicionamiento */
+@position-try --bottom-left {
+    inset: unset;
+    top: anchor(bottom);
+    right: anchor(right);
+}
+/* endregion */
+
+/* region --- POPUP CONFIRMACIÓN CIERRE DE SESIÓN --- */
+.popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+}
+
+.popup.activo {
+    display: flex;
+}
+
+.popup-contenido {
+    background-color: var(--color-panelesBlancoPuro);
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    font-family: var(--fuente-principal);
+}
+
+.popup-contenido p {
+    font-size: 1.125em;
+    font-weight: 400;
+    color: var(--color-resalteOscuro);
+}
+
+.popup-botones {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 2em;
+}
+/* endregion */
+
+@media (max-width: 690px) {
+    header {
+        height: 70px;
+        padding-right: 1em
+    }
+
+    .icono-notificacion {
+        height: 35px;
+        width: auto;
+        margin-right: 1em;
+        cursor: pointer;
+    }
+
+
+    .usuario-caja span {
+        display: none;
+    }
+
+    .usuario-caja {
+        padding: 0.4em;
+        border: none;
+        width: auto;
+        height: 45px;
+        justify-content: center;
+    }
+
+    .header-derecha {
+        justify-content: flex-end;
+        gap: 0.5em;
+    }
+}
+

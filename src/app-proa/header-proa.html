@@ -1,0 +1,44 @@
+<!-- Solo el contenido del header, sin html/head/body -->
+<header>
+    <div class="header-izquierda">
+        <a href="./index.html">
+            <img src="icons/logoBlanco.svg" alt="Logo PROA" class="logo" />
+        </a>
+    </div>
+
+    <div class="header-derecha">
+        <button class="boton-notificacion" popovertarget="menu-avisos">
+            <img src="icons/avisos.svg" alt="Notificaciones" class="icono-notificacion">
+        </button>
+
+        <button class="usuario-caja" popovertarget="menu-usuario">
+            <img src="icons/perfil.svg" alt="Icono usuario" class="icono-usuario">
+            <span id="nombre-usuario-header">Nombre</span>
+        </button>
+    </div>
+</header>
+
+<!-- Popover usuario -->
+<div id="menu-usuario" popover>
+    <div>Bienvenido<br><strong id="nombre-usuario-popover">Nombre</strong></div>
+    <div><a href="#" id="cerrar-sesion">Cerrar sesión</a></div>
+</div>
+
+<!-- Popover avisos -->
+<div id="menu-avisos" popover>
+    <div class="aviso-item">
+        <strong>Nuevo aviso</strong>
+        <div class="fecha-aviso">Fecha</div>
+    </div>
+</div>
+
+<!-- Popup confirmación -->
+<div class="popup" role="dialog" aria-modal="true">
+    <div class="popup-contenido">
+        <p>¿Estás seguro de que deseas cerrar sesión?</p>
+        <div class="popup-botones">
+            <button class="btn-oscuros popup-cancelar">Cancelar</button>
+            <button class="btn-oscuros-secundario popup-confirmar">Cerrar sesión</button>
+        </div>
+    </div>
+</div>

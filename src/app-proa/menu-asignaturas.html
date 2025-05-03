@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Página Principal Profesor</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="stylesheet" href="css/menu-asignaturas.css" />
+  <script src="js/header-proa.js" defer></script>
+</head>
+<body>
+<main class="contenido-principal">
+  <!-- Panel de asignaturas -->
+  <section class="panel-asignaturas">
+    <h2 class="titulo-azul titulo-con-icono">
+      <img src="icons/pagina.svg" alt="Icono Inicio" class="icono-inicio icono-azul" />
+      Inicio
+    </h2>
+
+    <div class="bloque-cabecera-asignaturas">
+      <h3 class="subtitulo-panel titulo-azul asignaturas">Tus asignaturas</h3>
+
+      <!-- Filtros -->
+      <div class="filtros-asignaturas">
+        <button class="boton-favoritas" id="btnFavoritas">
+          <img src="icons/favoritos.svg" alt="Favoritas" class="icono-azul" width="16" height="16" />
+          Favoritas
+        </button>
+
+        <div class="input-con-icono">
+          <select class="input-base seleccionador-dropdown" id="filtroRol">
+            <option value="todos">Todos</option>
+            <option value="responsable">Responsable</option>
+            <option value="colaborador">Colaborador</option>
+          </select>
+          <img src="icons/dropdown.svg" class="icono-dropdown" alt="Dropdown" />
+        </div>
+
+        <div class="input-con-icono">
+          <input type="text" class="input-base input-textoBusqueda" id="filtroTexto" placeholder="Nombre de la asignatura..." />
+          <img src="icons/search.svg" class="icono-buscador" alt="Buscar" />
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Lista dinámica -->
+    <div id="lista-asignaturas" class="lista-asignaturas"></div>
+  </section>
+
+  <!-- Panel de notificaciones -->
+  <aside class="panel-notificaciones">
+    <h3 class="subtitulo-panel titulo-azul">Últimas notificaciones</h3>
+    <ul id="lista-notificaciones" class="lista-notificaciones"></ul>
+  </aside>
+</main>
+
+<script src="js/menu-asignaturas.js" defer></script>
+</body>
+</html>
