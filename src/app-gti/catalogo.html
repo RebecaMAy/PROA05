@@ -5,10 +5,12 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Catálogo</title>
+    <title>Catálogo de módulos</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/catalogo.css">
     <script src="js/header.js" defer></script>
+    <script src="js/catalogo.js" defer></script>
 </head>
 <body>
 
@@ -16,7 +18,59 @@
 <div id="contenedor-header"></div>
 <!-- Cerramos sección header -->
 
-<h2>Catálogo</h2>
+<main class="catalogo">
+    <section class="catalogo-titulo">
+        <h2>Catálogo de módulos</h2>
+        <p class="parrafo-principal">Navega nuestro catálogo de módulos educativos</p>
+    </section>
+
+    <section class="modulo">
+        <div class="modulo-contenido">
+            <div class="logo-proa-container">
+            <img src="/src/app-proa/icons/logoAzul.svg" alt="Logo PROA" class="logo-proa">
+            </div>
+            <div class="modulo-texto">
+                <h3>PROA</h3>
+                <p class="parrafo-secundario">
+                    Descripción:
+                </p>
+                <p class="parrafo-terciario">
+                    PROA es un campus virtual que fortalece la comunicación entre docentes y alumnos, integrando funcionalidades como exámenes, calificaciones y horarios en un entorno claro y accesible. Diseñado para adaptarse al ritmo académico, facilita una experiencia educativa conectada y sin complicaciones. 
+                </p>
+            </div>
+            <div class="modulo-botones">
+                <button class="btnPROA">Probar DEMO</button>
+                <button class="btnPROA-secundario">Solicitar información</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="sugerencia">
+        <h3>¿Te gustaría ver otro módulo?</h3>
+        <p class="parrafo-secundario">
+            Ayúdanos a mejorar. Cuéntanos qué tipo de módulo te gustaría que ofrezcamos en el futuro.
+        </p>
+        <form class="formulario-sugerencia">
+            <div class="fila-doble">
+                <div class="campo">
+                    <label for="nombre">Nombre: *</label>
+                    <input type="text" id="nombre" class="input-contacto" placeholder="Tu nombre">
+                </div>
+                <div class="campo">
+                    <label for="email">Correo electrónico: *</label>
+                    <input type="email" id="email" class="input-contacto" placeholder="tu@correo.com">
+                </div>
+            </div>
+            <div class="campo campo-largo">
+                <label for="sugerencia">Sugerencia de módulo: *</label>
+                <textarea id="sugerencia" rows="5" class="input-contacto" placeholder="Describe tu idea..."></textarea>
+            </div>
+            <div class="boton-sugerencia">
+                <button type="submit" class="btn">Enviar sugerencia</button>
+            </div>
+        </form>
+    </section>
+</main>
 
 </body>
 </html>
