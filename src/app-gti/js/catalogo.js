@@ -55,3 +55,24 @@ document.querySelector('.formulario-sugerencia')?.addEventListener('submit', fun
         formulario.reset();
     }, 1500);
 });
+
+//botones redirigen dependiendo de si está logueado o no el usuario
+document.addEventListener('DOMContentLoaded', () => {
+    const btnDemo = document.getElementById('btnProbarDemo');
+    const btnInfo = document.getElementById('btnSolicitarInfo');
+
+    // Simulación de login: revisa si hay un usuario guardado en localStorage/sessionStorage
+    const usuarioGTI = JSON.parse(localStorage.getItem('usuario'));
+
+    btnDemo?.addEventListener('click', () => {
+        if (usuarioGTI) {
+            window.location.href = '../app-proa/index.html'; // login de PROA
+        } else {
+            window.location.href = 'login.html'; // login de GTI
+        }
+    });
+
+    btnInfo?.addEventListener('click', () => {
+        window.location.href = 'contacto.html';
+    });
+});
