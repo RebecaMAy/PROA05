@@ -1,19 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     const usuario = JSON.parse(localStorage.getItem('usuario'));
 
-    // Si no hay usuario logueado, redirige directamente al login de PROA
     if (!usuario) {
-        window.location.replace('index.html');  // Usamos replace para que no quede en el historial
+        window.location.replace('index.html');
         return;
     }
 
-    // Agregar clase al body según rol
     document.body.classList.add(`rol-${usuario.rol}`);
 
-    // Añadir CSS del header dinámicamente
     const linkHeaderCSS = document.createElement('link');
     linkHeaderCSS.rel = 'stylesheet';
-    linkHeaderCSS.href = '/src/app-proa/css/header-proa.css'; // Ajusta si cambia tu estructura
+    linkHeaderCSS.href = '/src/app-proa/css/header-proa.css';
     document.head.appendChild(linkHeaderCSS);
 
     fetch('header-proa.html')
@@ -21,55 +18,86 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(html => {
             document.body.insertAdjacentHTML('afterbegin', html);
 
-            // Esperar a que se inserte el DOM del header
             requestAnimationFrame(() => {
                 const nombreCompleto = `${usuario.nombre} ${usuario.apellidos}`;
-                let etiquetaRol = '';
+                const etiquetaRol =
+                    usuario.rol === 'alumno' ? ' (Alumno)' :
+                        usuario.rol === 'profesor' ? ' (Profesor)' :
+                            usuario.rol === 'pas' ? ' (PAS)' : '';
 
-                if (usuario.rol === 'alumno') {
-                    etiquetaRol = ' (Alumno)';
-                } else if (usuario.rol === 'profesor') {
-                    etiquetaRol = ' (Profesor)';
-                } else if (usuario.rol === 'pas') {
-                    etiquetaRol = ' (PAS)';
-                }
+                document.getElementById('nombre-usuario-header').textContent = etiquetaRol + " " + nombreCompleto;
+                document.getElementById('nombre-usuario-popover').textContent = etiquetaRol + " " + nombreCompleto;
 
-                document.getElementById('nombre-usuario-header').textContent = nombreCompleto + etiquetaRol;
-                document.getElementById('nombre-usuario-popover').textContent = nombreCompleto + etiquetaRol;
+                // Cargar notificaciones
+                fetch("../api/data/notificaciones.json")
+                    .then(res => res.json())
+                    .then(data => {
+                        const notificaciones = data[usuario.correo] || [];
+                        const contenedorPopover = document.getElementById("menu-avisos");
+                        contenedorPopover.innerHTML = "";
 
-                const cerrarSesion = document.getElementById('cerrar-sesion');
-                const popup = document.querySelector('.popup');
-                const confirmar = popup.querySelector('.popup-confirmar');
-                const cancelar = popup.querySelector('.popup-cancelar');
+                        if (notificaciones.length === 0) {
+                            const sinAvisos = document.createElement("div");
+                            sinAvisos.classList.add("aviso-item");
+                            sinAvisos.innerHTML = `<strong>No tienes notificaciones nuevas</strong>`;
+                            contenedorPopover.appendChild(sinAvisos);
+                        } else {
+                            notificaciones
+                                .sort((a, b) => new Date(b.fecha) - new Date(a.fecha))
+                                .forEach(n => {
+                                    const aviso = document.createElement("div");
+                                    aviso.classList.add("aviso-item");
+                                    aviso.innerHTML = `<strong>${n.texto}</strong><div class="fecha-aviso">${n.fecha}</div>`;
+                                    contenedorPopover.appendChild(aviso);
+                                });
+                        }
 
-                // Acción de cerrar sesión
-                cerrarSesion.addEventListener('click', (e) => {
+                    });
+
+                // Manejar popover notificaciones
+                const botonNotificacion = document.querySelector(".boton-notificacion");
+                const menuAvisos = document.getElementById("menu-avisos");
+                const burbujaNotificacion = document.querySelector(".burbuja-notificacion");
+
+                botonNotificacion?.addEventListener("click", e => {
                     e.preventDefault();
-                    popup.classList.add('activo');
-                    document.body.classList.add('menu-abierto');
-                });
-
-                confirmar.addEventListener('click', () => {
-                    // Elimina el usuario del localStorage
-                    localStorage.removeItem('usuario');
-
-                    // Redirige al login de PROA y reemplaza la página en el historial para evitar el retroceso
-                    window.location.replace('index.html');
-
-                    // Prevenir retroceso en el historial (esto evita que al presionar "Atrás", el usuario regrese a la página anterior)
-                    if (window.history && window.history.pushState) {
-                        // Elimina la última entrada en el historial
-                        window.history.pushState(null, null, window.location.href);
-                        window.onpopstate = function () {
-                            window.history.pushState(null, null, window.location.href);
-                        };
+                    if (menuAvisos.matches(":popover-open")) {
+                        menuAvisos.hidePopover();
+                    } else {
+                        menuAvisos.showPopover();
                     }
+                    burbujaNotificacion?.remove();
                 });
 
-                cancelar.addEventListener('click', () => {
-                    popup.classList.remove('activo');
-                    document.body.classList.remove('menu-abierto');
+                // Cierre de sesión con popup
+                const cerrarSesion = document.getElementById("cerrar-sesion");
+                const popup = document.querySelector(".popup");
+                const confirmar = popup.querySelector(".popup-confirmar");
+                const cancelar = popup.querySelector(".popup-cancelar");
+
+                cerrarSesion.addEventListener("click", e => {
+                    e.preventDefault();
+                    popup.classList.add("activo");
+                    document.body.classList.add("menu-abierto");
+                });
+
+                confirmar.addEventListener("click", () => {
+                    localStorage.removeItem("usuario");
+                    window.location.replace("index.html");
+                });
+
+                cancelar.addEventListener("click", () => {
+                    popup.classList.remove("activo");
+                    document.body.classList.remove("menu-abierto");
                 });
             });
         });
+});
+
+// Recarga si vienes del historial tras cerrar sesión
+window.addEventListener("pageshow", event => {
+    const usuario = JSON.parse(localStorage.getItem("usuario"));
+    if (event.persisted && !usuario) {
+        window.location.reload();
+    }
 });

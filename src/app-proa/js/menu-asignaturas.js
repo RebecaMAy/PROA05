@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const nombreNormalizado = normalizar(nombreCompleto);
 
-    fetch("api/data/asignaturas.json")
+    fetch("../api/data/asignaturas.json")
         .then(res => res.json())
         .then(asignaturas => {
             const asignaturasUsuario = asignaturas.filter(asig =>
@@ -126,17 +126,45 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("filtroRol")?.addEventListener("change", aplicarFiltros);
     document.getElementById("filtroTexto").addEventListener("input", aplicarFiltros);
 
-    const notificaciones = [
-        { texto: "Nuevo examen disponible en Álgebra", fecha: "2024-03-20" },
-        { texto: "Calificación publicada en Programación", fecha: "2024-03-19" },
-        { texto: "Recordatorio: Entrega práctica Algorítmica", fecha: "2024-03-18" }
-    ];
+    // Simulación de notificaciones personalizadas
+    // Simulación de notificaciones personalizadas
+    fetch("../api/data/notificaciones.json")
+        .then(res => res.json())
+        .then(data => {
+            const usuarioCorreo = usuario.correo;
+            const notificacionesUsuario = data[usuarioCorreo] || [];
 
-    const listaNotif = document.getElementById("lista-notificaciones");
-    notificaciones.forEach(n => {
-        const li = document.createElement("li");
-        li.classList.add("notificacion-item");
-        li.innerHTML = `<p>${n.texto}</p><small>${n.fecha}</small>`;
-        listaNotif.appendChild(li);
-    });
+            // Ordenar por fecha descendente
+            const notificacionesOrdenadas = notificacionesUsuario.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+
+            const listaNotif = document.getElementById("lista-notificaciones");
+            listaNotif.innerHTML = "";
+
+            if (notificacionesOrdenadas.length === 0) {
+                // Mostrar mensaje amigable si no hay notificaciones
+                const li = document.createElement("li");
+                li.classList.add("notificacion-item");
+                li.innerHTML = `<p>No tienes notificaciones recientes.</p>`;
+                listaNotif.appendChild(li);
+            } else {
+                // Mostrar cada notificación
+                notificacionesOrdenadas.forEach(n => {
+                    const li = document.createElement("li");
+                    li.classList.add("notificacion-item");
+                    li.innerHTML = `<p>${n.texto}</p><small>${n.fecha}</small>`;
+                    listaNotif.appendChild(li);
+                });
+            }
+
+            // Añadir burbuja de notificación solo si hay nuevas
+            if (notificacionesOrdenadas.length > 0) {
+                const iconoNotif = document.querySelector(".icono-notificacion");
+                const burbuja = document.createElement("span");
+                burbuja.classList.add("burbuja-notificacion");
+                iconoNotif.parentElement.style.position = "relative";
+                iconoNotif.parentElement.appendChild(burbuja);
+            }
+        });
+
+
 });

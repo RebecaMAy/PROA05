@@ -1,0 +1,25 @@
+
+{
+  "l.simdre@epsg.upv.es": [
+    {"texto": "Tarea de Álgebra calificada", "fecha": "2025-05-03"},
+    {"texto": "Nuevo recurso en Fundamentos", "fecha": "2025-04-30"}
+  ],
+  "m.kirkam@epsg.upv.es": [
+    {"texto": "Examen de Cálculo programado", "fecha": "2025-05-02"}
+  ],
+  "d.rawabc@epsg.upv.es": [
+    {"texto": "Entrega de práctica de Algorítmica disponible", "fecha": "2025-05-03"},
+    {"texto": "Nota de Programación publicada", "fecha": "2025-04-29"}
+  ],
+  "k.poumai@upv.es": [
+    {"texto": "Recordatorio: subir material de clase", "fecha": "2025-05-01"}
+  ],
+  "l.prista@upv.es": [
+    {"texto": "Revisión de prácticas en Gestión de Proyectos", "fecha": "2025-04-28"}
+  ],
+  "e.mermiz@upv.es": [],
+  "o.breshe@upv.es": [
+    {"texto": "Nuevo usuario creado en el sistema", "fecha": "2025-05-02"}
+  ],
+  "b.maltho@upv.es": []
+}
