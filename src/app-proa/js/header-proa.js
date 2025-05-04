@@ -13,7 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
     linkHeaderCSS.href = '/src/app-proa/css/header-proa.css';
     document.head.appendChild(linkHeaderCSS);
 
-    fetch('header-proa.html')
+    const rutaBase = location.pathname.includes('/pas/') ? '../' : './';
+
+    fetch(`${rutaBase}header-proa.html`)
         .then(res => res.text())
         .then(html => {
             document.body.insertAdjacentHTML('afterbegin', html);
@@ -83,7 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 confirmar.addEventListener("click", () => {
                     localStorage.removeItem("usuario");
-                    window.location.replace("index.html");
+                    const esPas = location.pathname.includes('/pas/');
+                    const rutaLogout = esPas ? '../index.html' : './index.html';
+                    window.location.replace(rutaLogout);
+
                 });
 
                 cancelar.addEventListener("click", () => {

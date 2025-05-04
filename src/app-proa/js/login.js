@@ -14,7 +14,7 @@ if (usuarioLogueado) {
                 if (usuarioValido.rol === "pas") {
                     window.location.replace('../app-proa/pas/index.html');
                 } else {
-                    window.location.replace('../app-proa/menu-asignaturas.html');
+                    window.location.replace('../app-proa/inicio-asignaturas.html');
                 }
             }
         });
@@ -94,7 +94,7 @@ document.querySelector('.formulario-login')?.addEventListener('submit', function
                     if (usuario.rol === "pas") {
                         window.location.href = '../app-proa/pas/index.html';
                     } else {
-                        window.location.href = '../app-proa/menu-asignaturas.html';
+                        window.location.href = '../app-proa/inicio-asignaturas.html';
                     }
                 }, 2000);
 

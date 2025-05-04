@@ -1,0 +1,141 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+
+/* WRAPPER GENERAL */
+.contenido-asignatura-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding: 2em;
+}
+
+/* LAYOUT PRINCIPAL */
+.contenido-principal {
+    display: flex;
+    gap: 4em;
+    align-items: flex-start;
+    background-color: var(--color-fondoPROAGris);
+}
+
+/* Ajustes específicos para PAS */
+body.rol-pas .contenido-principal {
+    min-height: 100vh;
+    background-color: transparent;
+}
+
+/* CABECERA DE LA ASIGNATURA */
+.icono-inicio {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.cabecera-asignatura {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    border: none;
+    padding: 1em;
+}
+
+.titulo-con-icono {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+.codigo-asignatura {
+    font-size: 1em;
+    color: #666;
+}
+
+/* SUBMENÚ GENERAL */
+#submenu-asignatura {
+    flex: 0 0 320px;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    height: fit-content;
+    align-self: flex-start;
+    padding: 2.5em;
+
+}
+
+#submenu-asignatura a,
+.menu-pas .submenu-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+    text-decoration: none;
+    color: var(--color-resalteOscuro);
+    padding: 0.75em 1em;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s;
+    font-weight: 500;
+}
+
+#submenu-asignatura a:hover,
+.menu-pas .submenu-item:hover {
+    background-color: var(--color-terciario);
+    color: var(--color-primario);
+}
+
+#submenu-asignatura img,
+.menu-pas .submenu-item img {
+    width: 2em;
+    height: 2em;
+}
+
+/* PANEL CONTENIDO */
+.contenido-asignatura {
+    flex: 1;
+}
+
+.fondoPanel {
+    border: 1px solid var(--color-bordes);
+    width: 100%;
+
+}
+
+/* SUBMENÚ ESTILO PAS */
+.menu-pas {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    background-color: #fff;
+    padding: 2.5em 2em;
+    min-width: 320px;
+}
+
+body.rol-pas #submenu-asignatura {
+    height: 100%;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+/* TÍTULO DEL SUBMENÚ PARA PAS */
+.titulo-submenu-pas {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.5em;
+    color: var(--color-primario);
+}
+
+body.rol-pas .contenido-asignatura-wrapper {
+    flex: 1;
+    height: 100%;
+    padding: 0 2em 2em 0;
+}
+
+body.rol-pas .fondoPanel {
+    margin-top: 3em;
+}
+

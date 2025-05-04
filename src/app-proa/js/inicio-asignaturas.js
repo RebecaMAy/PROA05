@@ -1,4 +1,4 @@
-// Archivo: menu-asignaturas.js
+// Archivo: inicio-asignaturas.js
 console.log("Script cargado correctamente");
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -73,6 +73,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
 
             `;
+
+            //redirige a aisgnatura seleccionada
+            div.addEventListener("click", () => {
+                localStorage.setItem("asignaturaSeleccionada", JSON.stringify({
+                    nombre: asig.nombre,
+                    codigo: asig.codigo
+                }));
+                window.location.href = "panel-usuario.html";
+            });
+
+
             lista.appendChild(div);
         });
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Asignatura</title>
+    <!-- Estilos comunes -->
+    <link rel="stylesheet" href="css/estilos.css" />
+    <!-- Estilo específico del submenú -->
+    <link rel="stylesheet" href="css/submenu-asignatura.css" />
+    <!-- Header dinámico -->
+    <script src="js/header-proa.js" defer></script>
+</head>
+
+<body>
+<main class="contenido-asignatura-wrapper">
+
+    <!-- Cabecera superior con nombre y código de la asignatura -->
+    <section class="cabecera-asignatura">
+        <h2 class="titulo-con-icono titulo-azul">
+            <img src="icons/book.svg" alt="Icono libro" class="icono-inicio icono-azul" />
+            <span id="titulo-asignatura">Nombre de la asignatura</span>
+        </h2>
+        <p id="codigo-asignatura" class="codigo-asignatura centrado-horizontal"></p>
+    </section>
+
+
+    <!-- Contenido dividido: menú lateral + contenido dinámico -->
+    <div class="contenido-principal">
+        <aside id="submenu-asignatura" class="submenu-asignatura"></aside>
+
+        <section class="panel-asignaturas fondoPanel">
+            <p>Selecciona una opción del submenú lateral para ver los contenidos de esta asignatura.</p>
+        </section>
+    </div>
+</main>
+
+<!-- Script de lógica para esta página -->
+<script src="js/panel-usuario.js"></script>
+
+</body>
+</html>
