@@ -117,6 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function activarEventosAsignaturas() {
         document.querySelectorAll(".icono-favorito").forEach(icono => {
             icono.addEventListener("click", () => {
+                event.stopPropagation();
                 const contenedor = icono.closest(".item-asignatura");
                 const esFavorita = icono.dataset.favorita === "true";
 

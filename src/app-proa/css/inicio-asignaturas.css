@@ -312,6 +312,15 @@
 
 /* Pantallas de 768px de ancho */
 @media (max-width: 768px) {
+
+    .titulo-con-icono .icono-inicio {
+        display: none;
+    }
+
+    .titulo-con-icono {
+        margin-bottom: 0.5em;
+    }
+
     .contenido-principal {
         flex-direction: column;
         padding: 1em;
@@ -328,7 +337,6 @@
     .filtros-asignaturas {
         flex-direction: column; /* Apilar los filtros debajo */
         gap: 1em;
-        margin-top: 1.5em; /* Separación de los filtros respecto a las asignaturas */
         margin-bottom: 1.5em; /* Separación del resto de la página */
     }
 
@@ -365,6 +373,23 @@
     .asignatura-izquierda p {
         font-size: 0.9em;
         color: #888;
+    }
+
+    .asignatura-izquierda img {
+        display: none;
+    }
+
+    .bloque-cabecera-asignaturas {
+        flex-direction: column;
+        gap: 0.2em;
+    }
+
+    .cabecera-titulo {
+        width: 100%;
+    }
+
+    .filtros-asignaturas {
+        width: 100%;
     }
 }
 
