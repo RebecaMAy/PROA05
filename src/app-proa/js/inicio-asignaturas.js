@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             `;
 
-            //redirige a aisgnatura seleccionada
+            // Redirige a aisgnatura seleccionada
             div.addEventListener("click", () => {
                 localStorage.setItem("asignaturaSeleccionada", JSON.stringify({
                     nombre: asig.nombre,
@@ -138,7 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("filtroRol")?.addEventListener("change", aplicarFiltros);
     document.getElementById("filtroTexto").addEventListener("input", aplicarFiltros);
 
-    // Simulación de notificaciones personalizadas
     // Simulación de notificaciones personalizadas
     fetch("../api/data/notificaciones.json")
         .then(res => res.json())
