@@ -332,6 +332,65 @@ label {
 }
 /* endregion */
 
+/* Botones oscuros (sin invertir colores) */
+.btn-oscuros {
+    font-family: var(--fuente-lato);
+    background-color: var(--color-PROA);
+    font-size: 1.125em;
+    font-weight: 400;
+    color: white;
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: filter 0.2s ease-in-out;
+}
+
+.btn-oscuros:hover,
+.btn-oscuros:focus {
+    filter: brightness(0.9);
+}
+
+.btn-oscuros-secundario {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-blancoPuro);
+    font-size: 1.125em;
+    font-weight: 400;
+    color: var(--color-PROA);
+    padding: 0.75em 1.5em;
+    border: 2px solid var(--color-PROA);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: filter 0.2s ease-in-out;
+}
+
+.btn-oscuros-secundario:hover,
+.btn-oscuros-secundario:focus {
+    filter: brightness(0.95);
+}
+
+@media (max-width: 768px) {
+    .btn,
+    .btn-secundario,
+    .btn-oscuros,
+    .btn-oscuros-secundario {
+        font-size: 1em;
+        padding: 0.5em 1em;
+        border-radius: 8px;
+    }
+
+    .btn-agregar {
+        font-size: 0.875em;
+        padding: 0.5em;
+    }
+
+    .boton-opcion {
+        font-size: 0.875em;
+        padding: 0.5em 0.75em;
+    }
+}
+/* endregion */
+
 /* region --- BOTONES RESPONSIVES --- */
 @media (max-width: 480px) {
     .btn,

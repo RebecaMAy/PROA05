@@ -59,7 +59,7 @@ document.querySelector('.formulario-sugerencia')?.addEventListener('submit', fun
 //botones redirigen dependiendo de si está logueado o no el usuario
 document.addEventListener('DOMContentLoaded', () => {
     const btnDemo = document.getElementById('btnProbarDemo');
-    const btnInfo = document.getElementById('btnSolicitarInfo');
+    const btnProd = document.getElementById('btnVisualizarProd');
 
     // Simulación de login: revisa si hay un usuario guardado en localStorage/sessionStorage
     const usuarioGTI = JSON.parse(localStorage.getItem('usuario'));
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    btnInfo?.addEventListener('click', () => {
-        window.location.href = 'contacto.html';
+    btnProd?.addEventListener('click', () => {
+        window.location.href = 'pagProducto.html';
     });
 });
