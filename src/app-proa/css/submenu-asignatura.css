@@ -1,9 +1,3 @@
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-
 /* WRAPPER GENERAL */
 .contenido-asignatura-wrapper {
     display: flex;
@@ -296,4 +290,3 @@ body.rol-pas .fondoPanel {
     }
 
 }
-

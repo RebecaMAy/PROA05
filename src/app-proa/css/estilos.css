@@ -338,9 +338,10 @@ label {
 }
 
 #dropdown-asignaturas {
-    color: var(--color-panelesBlancoPuro);
-    border-color: var(--color-primario);
-    background-color: var(--color-primario);
+    color: var(--color-primario);
+    background-color: var(--color-panelesBlancoPuro);
+    border: 2px solid var(--color-primario);
+    border-radius: 4px
 }
 /* endregion */
 
